@@ -34,7 +34,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Welcome_txt"
-        app:srcCompat="@drawable/house_cropped" />
+        app:srcCompat="@drawable/house_cropped"
+        app:layout_constraintBottom_toTopOf="@id/button2"/>
 
     <ImageView
         android:id="@+id/grass"
