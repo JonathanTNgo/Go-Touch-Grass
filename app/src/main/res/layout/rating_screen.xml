@@ -12,12 +12,10 @@
         android:layout_height="300sp"
         android:layout_centerInParent="true"
         android:layout_marginBottom="300dp"
-        android:autoText="false"
-        android:background="@color/purple_200"
         android:backgroundTintMode="add"
         android:elegantTextHeight="false"
         android:gravity="center"
-        android:hint="What did you do?"
+        android:hint="What did you do?\n Edit me!"
         android:inputType="textMultiLine"
         android:singleLine="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -71,7 +69,6 @@
             android:layout_height="wrap_content"
             android:text="Great" />
     </RadioGroup>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
