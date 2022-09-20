@@ -51,16 +51,4 @@
         app:layout_constraintTop_toBottomOf="@+id/Welcome_txt"
         app:srcCompat="@drawable/starting_grass" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
-        android:scaleX="2"
-        android:scaleY="2"
-        android:text="LOGS"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/grass" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
