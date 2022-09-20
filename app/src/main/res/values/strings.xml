@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GoTouchGrass</string>
+    <string name="home_txt">GO</string>
+    <string name="grass_txt">GO TOUCH</string>
 </resources>
