@@ -10,6 +10,11 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.view.marginTop
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.lang.System
+import java.lang.System.currentTimeMillis
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     // Declaration for "buttons"
@@ -23,6 +28,9 @@ class MainActivity : AppCompatActivity() {
     private var currentState = GRASS
     // Switching intents
     private lateinit var listIntent: Intent
+    // Time variables
+    private var timeStart = 0;
+    private var timeEnd = 0;
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,13 +69,19 @@ class MainActivity : AppCompatActivity() {
     private fun clickActionImage() {
         when (currentState) {
             GRASS -> {
-                // Grass should bring us to the home button
                 currentState = HOME
-                // TODO: START TIME
+                // Log current start time
+                timeStart = currentTimeMillis().toInt();
+                // Text pop-up to indicate to users that their start time has been recorded
+                val toast = Toast.makeText(this, "Start Time Logged", Toast.LENGTH_SHORT)
+                toast.show()
             };
             HOME -> {
-                // Home should bring us to the activity scene
-                // TODO: END TIME
+                // Log current end time
+                timeEnd = currentTimeMillis().toInt();
+                // Switch to rating screen
+                // TODO: CAMERON, SEND (time end - time start) / 1000 to the rating screen
+                // TODO: /1000 because time is measured in milliseconds
                 val intent = Intent(this, RatingScreen::class.java)
                 this.startActivity(intent)
                 // TODO: COROUTINE TO ENSURE STATE CHANGE HAPPENS AFTER ACTIVITY
@@ -90,6 +104,7 @@ class MainActivity : AppCompatActivity() {
 
             HOME -> {
                 textAction.text = resources.getString(R.string.home_txt)
+//                textAction.text = ((timeEnd-timeStart)/1000).toString() + " seconds";
                 actionImage?.setImageResource(R.drawable.starting_house)
 
             }
