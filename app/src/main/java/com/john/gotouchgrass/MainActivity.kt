@@ -55,7 +55,8 @@ class MainActivity : AppCompatActivity() {
         // Setting up log button
         logButton = findViewById(R.id.button2)
         logButton!!.setOnClickListener {
-            // TODO: SET UP AND MOVE TO LOG ACTIVITY
+            val intent = Intent(this, LogScreen::class.java)
+            this.startActivity(intent)
         }
     }
 

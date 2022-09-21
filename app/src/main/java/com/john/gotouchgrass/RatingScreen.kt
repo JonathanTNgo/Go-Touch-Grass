@@ -1,5 +1,6 @@
 package com.john.gotouchgrass
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
@@ -25,7 +26,8 @@ class RatingScreen: AppCompatActivity() {
         submitButton!!.setOnClickListener {
             // Ends current activity. Currently returns back to home
             // (which is good)
-            finish()
+            val intent = Intent(this, ConfettiScreen::class.java)
+            this.startActivity(intent)
         }
     }
 
