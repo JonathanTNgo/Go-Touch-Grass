@@ -47,8 +47,7 @@ class MainActivity : AppCompatActivity() {
         // Setting up log button
         logButton = findViewById(R.id.button2)
         logButton!!.setOnClickListener {
-            val intent = Intent(this, RatingScreen::class.java)
-            this.startActivity(intent)
+            // TODO: SET UP AND MOVE TO LOG ACTIVITY
         }
     }
 
@@ -67,9 +66,12 @@ class MainActivity : AppCompatActivity() {
                 // TODO: START TIME
             };
             HOME -> {
-                // Grass should bring us to the home button
-                currentState = GRASS
+                // Home should bring us to the activity scene
                 // TODO: END TIME
+                val intent = Intent(this, RatingScreen::class.java)
+                this.startActivity(intent)
+                // TODO: COROUTINE TO ENSURE STATE CHANGE HAPPENS AFTER ACTIVITY
+                currentState = GRASS
             };
         }
 
@@ -89,6 +91,7 @@ class MainActivity : AppCompatActivity() {
             HOME -> {
                 textAction.text = resources.getString(R.string.home_txt)
                 actionImage?.setImageResource(R.drawable.starting_house)
+
             }
         }
     }
