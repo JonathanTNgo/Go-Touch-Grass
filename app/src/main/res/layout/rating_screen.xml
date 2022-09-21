@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RatingScreen">
+
+    <EditText
+        android:id="@+id/activity_text"
+        android:layout_width="300sp"
+        android:layout_height="300sp"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="300dp"
+        android:backgroundTintMode="add"
+        android:elegantTextHeight="false"
+        android:gravity="center"
+        android:hint="What did you do?\n Edit me!"
+        android:inputType="textMultiLine"
+        android:singleLine="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColorHint="#757575"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></EditText>
+
+    <TextView
+        android:id="@+id/rate_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="RATE YOUR EXPERIENCE"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tip_options"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activity_text" />
+
+
+    <RadioGroup
+        android:id="@+id/tip_options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/okay_option"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rate_text">
+
+        <RadioButton
+            android:id="@+id/bad_option"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bad" />
+
+        <RadioButton
+            android:id="@+id/okay_option"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Okay" />
+
+        <RadioButton
+            android:id="@+id/great_option"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Great" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tip_options" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

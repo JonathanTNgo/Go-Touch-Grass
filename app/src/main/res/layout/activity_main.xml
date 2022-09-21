@@ -20,35 +20,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <ImageView
-        android:id="@+id/house"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:adjustViewBounds="true"
-        android:maxWidth="250dp"
-        android:maxHeight="250dp"
-        android:scaleType="fitCenter"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Welcome_txt"
-        app:srcCompat="@drawable/house_cropped" />
-
-    <ImageView
-        android:id="@+id/grass"
+        android:id="@+id/main_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="75dp"
+        android:layout_marginBottom="25dp"
         android:adjustViewBounds="true"
         android:maxWidth="300dp"
         android:maxHeight="300dp"
         android:scaleType="fitCenter"
         android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Welcome_txt"
-        app:srcCompat="@drawable/starting_grass" />
+        app:srcCompat="@drawable/starting_house" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="LOG"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_image" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
