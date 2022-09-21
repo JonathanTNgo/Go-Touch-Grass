@@ -12,24 +12,17 @@ import android.widget.TextView
 import androidx.core.view.marginTop
 
 class MainActivity : AppCompatActivity() {
+    // Declaration for "buttons"
     private var actionImage: ImageView? = null
     private var logButton: Button? = null
+    // States and variables
     private var ACTION_STATE = "ACTION_STATE"
-    private var EXPERIENCE = "EXPERIENCE"
     private val HOME = "home"
     private val GRASS = "grass"
-    // default state for action = grass
-    private var currentState = "grass"
-
-
-//    private lateinit var binding: ActivityMainBinding
-    // build.gradle (app) in android add
-    // buildFeatures{
-    //  viewBinding = true
-    // }
+    // DEFAULT state should be set to grass
+    private var currentState = GRASS
+    // Switching intents
     private lateinit var listIntent: Intent
-
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         // Setting default values
         if (savedInstanceState != null) {
-            currentState = savedInstanceState.getString(ACTION_STATE, "grass")
+            currentState = savedInstanceState.getString(ACTION_STATE, GRASS)
         }
 
         // Attach image to id
@@ -46,43 +39,45 @@ class MainActivity : AppCompatActivity() {
         // Set elements according to current state
         setViewElements()
 
+        // When user clicks the image, update the state information and proceed
         actionImage!!.setOnClickListener {
-            // When user clicks the image, update the state information and procede
             clickActionImage()
         }
 
+        // Setting up log button
         logButton = findViewById(R.id.button2)
-
         logButton!!.setOnClickListener {
             val intent = Intent(this, RatingScreen::class.java)
-            Log.d("hello", "click")
-            //intent.putExtra("startingTime", System.currentTimeMillis())
             this.startActivity(intent)
-            Log.d("hello", "apple")
         }
     }
 
+    // State saver
     override fun onSaveInstanceState(outState: Bundle) {
         outState.putString(ACTION_STATE, currentState)
         super.onSaveInstanceState(outState)
     }
 
+    // Updates state on click. Then update the view elemetns
     private fun clickActionImage() {
         when (currentState) {
             GRASS -> {
+                // Grass should bring us to the home button
                 currentState = HOME
+                // TODO: START TIME
             };
             HOME -> {
+                // Grass should bring us to the home button
                 currentState = GRASS
+                // TODO: END TIME
             };
         }
 
         setViewElements()
     }
 
+    // Updates view elements based on current state
     private fun setViewElements() {
-        // Temp implementation is for default grass/home
-
         val textAction: TextView = findViewById(R.id.Welcome_txt)
 
         when (currentState) {
@@ -97,6 +92,4 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
-
 }
