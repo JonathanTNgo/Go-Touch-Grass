@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Attach image to id
-        actionImage = findViewById(R.id.grass)
+        actionImage = findViewById(R.id.main_image)
         // Set elements according to current state
         setViewElements()
 
@@ -74,9 +74,6 @@ class MainActivity : AppCompatActivity() {
             };
             HOME -> {
                 currentState = GRASS
-//                val intent = Intent(this, RatingScreen::class.java)
-//                //intent.putExtra("startingTime", System.currentTimeMillis())
-//                startActivity(intent)
             };
         }
 
@@ -85,7 +82,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun setViewElements() {
         // Temp implementation is for default grass/home
-        // TODO: allow user to change "theme" (IE: BEACH)
 
         val textAction: TextView = findViewById(R.id.Welcome_txt)
 
@@ -97,7 +93,7 @@ class MainActivity : AppCompatActivity() {
 
             HOME -> {
                 textAction.text = resources.getString(R.string.home_txt)
-                actionImage?.setImageResource(R.drawable.house_cropped)
+                actionImage?.setImageResource(R.drawable.starting_house)
             }
         }
     }
