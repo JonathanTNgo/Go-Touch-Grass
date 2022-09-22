@@ -35,14 +35,14 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/tip_options"
+        app:layout_constraintBottom_toTopOf="@+id/rating_options"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/activity_text" />
 
 
     <RadioGroup
-        android:id="@+id/tip_options"
+        android:id="@+id/rating_options"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:checkedButton="@id/okay_option"
@@ -80,7 +80,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tip_options" />
+        app:layout_constraintTop_toBottomOf="@+id/rating_options" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

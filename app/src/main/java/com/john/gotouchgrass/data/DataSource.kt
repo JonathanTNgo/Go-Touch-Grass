@@ -6,7 +6,7 @@ import com.john.gotouchgrass.model.GrassMoment
  */
 object DataSource {
 
-    val grassMoments: List<GrassMoment> = listOf(
+    val grassMoments: MutableList<GrassMoment> = mutableListOf(
         GrassMoment(
             10,
             "I got bit by a bug",
