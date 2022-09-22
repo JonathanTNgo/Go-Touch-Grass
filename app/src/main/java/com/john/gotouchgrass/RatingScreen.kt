@@ -31,25 +31,29 @@ class RatingScreen: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.rating_screen)
+        binding = RatingScreenBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+//        super.onCreate(savedInstanceState)
+//        setContentView(R.layout.rating_screen)
 
         // Once submit is pressed, go back to home screen
         submitButton = findViewById(R.id.submit)
-        var radioGroup: Button? = findViewById(R.id.rating_options.getCheckedRadioButton())
+        var radioGroup = binding.ratingOptions.checkedRadioButtonId
         submitButton!!.setOnClickListener {
             // Ends current activity. Currently returns back to home
             // (which is good)
 //            binding.tipOptions.checkedRadioButtonId
 
+            val ratingString = when (radioGroup) {
+                R.id.great_option -> "Great"
+                R.id.okay_option -> "Okay"
+                else -> "Bad"
+            }
 
-            // SAVE STATE
-            Log.d("endTime", timeSpent.toString())
-//            var timeSpent =
-            val moment: GrassMoment = GrassMoment(timeSpent, R.id.activity_text, radioGroup.checkedRadioButtonId.text.toString() )
-            //DataSource.grassMoments.add(moment)
+            val moment: GrassMoment = GrassMoment(timeSpent, binding.activityText.text.toString(), ratingString)
+            DataSource.grassMoments.add(moment)
             val intent = Intent(this, ConfettiScreen::class.java)
             this.startActivity(intent)
-//            finish()
         }
 
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
