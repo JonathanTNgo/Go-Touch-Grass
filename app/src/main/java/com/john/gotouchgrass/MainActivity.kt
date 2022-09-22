@@ -66,6 +66,10 @@ class MainActivity : AppCompatActivity() {
         super.onSaveInstanceState(outState)
     }
 
+    override fun onRestart() {
+        super.onRestart()
+    }
+
     // Updates state on click. Then update the view elemetns
     private fun clickActionImage() {
         when (currentState) {
@@ -87,6 +91,12 @@ class MainActivity : AppCompatActivity() {
                 this.startActivity(intent)
                 // TODO: COROUTINE TO ENSURE STATE CHANGE HAPPENS AFTER ACTIVITY
                 currentState = GRASS
+                // startActivityForResult may be our solution, it is async and we wait for a result
+                // before doing something
+                // can have onResult returns 0 -> stay @ home screen
+                // onResult returns 1 -> change to grass string
+                // we could then configure this so that the back button returns a 0
+                // and clicking another button returns 1 depending on the context
             };
         }
 
