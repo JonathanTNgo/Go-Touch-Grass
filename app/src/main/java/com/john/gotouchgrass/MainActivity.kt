@@ -93,7 +93,8 @@ class MainActivity : AppCompatActivity() {
                 // TODO: CAMERON, SEND (time end - time start) / 1000 to the rating screen
                 // TODO: /1000 because time is measured in milliseconds
                 val intent = Intent(this, RatingScreen::class.java)
-                RatingScreen.timeSpent = (timeEnd - timeStart) / 1000
+                RatingScreen.timeSpent = (timeEnd - timeStart) / (1000.0 * 60)
+                Log.d("TIME", RatingScreen.timeSpent.toString())
                 this.startActivity(intent)
                 // TODO: COROUTINE TO ENSURE STATE CHANGE HAPPENS AFTER ACTIVITY
                  currentState = GRASS

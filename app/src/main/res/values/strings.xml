@@ -2,6 +2,7 @@
     <string name="app_name">GoTouchGrass</string>
     <string name="home_txt">GO</string>
     <string name="grass_txt">GO TOUCH</string>
-    <string name="time_spent">TIME SPENT: %d</string>
-    <string name="rating">Rating: %s</string>
+    <string name="time_spent">TIME SPENT: %.2f minutes</string>
+    <string name="rating">RATING: %s</string>
+    <string name="minute_string">You spent %.2f minutes outside!</string>
 </resources>

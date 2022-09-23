@@ -24,7 +24,7 @@ class RatingScreen: AppCompatActivity() {
     // Save time
 
     companion object {
-        var timeSpent: Int = 0
+        var timeSpent: Double = 0.0
     }
 
     private lateinit var binding: RatingScreenBinding
@@ -38,11 +38,13 @@ class RatingScreen: AppCompatActivity() {
 
         // Once submit is pressed, go back to home screen
         submitButton = findViewById(R.id.submit)
-        var radioGroup = binding.ratingOptions.checkedRadioButtonId
+
+
         submitButton!!.setOnClickListener {
             // Ends current activity. Currently returns back to home
             // (which is good)
 //            binding.tipOptions.checkedRadioButtonId
+            var radioGroup = binding.ratingOptions.checkedRadioButtonId
 
             val ratingString = when (radioGroup) {
                 R.id.great_option -> "Great"

@@ -3,6 +3,7 @@ package com.john.gotouchgrass
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -12,7 +13,11 @@ class ConfettiScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_confetti_screen)
-        homeButton = findViewById(R.id.button)
+        homeButton = findViewById(R.id.home_button)
+
+        var textElement: TextView = findViewById(R.id.time_text)
+        textElement.text = this.resources?.getString(R.string.minute_string, RatingScreen.timeSpent)
+
         // TODO: ON BUTTON CLICK, FINISH ACTIVITY AND RETURN HOME
         // (KILL EVERY ACTIVITY, START A FRESH NEW ACTIVITY)
         homeButton!!.setOnClickListener {

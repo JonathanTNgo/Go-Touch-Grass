@@ -13,7 +13,6 @@
         android:layout_height="wrap_content">
 
 
-        <!--This is the TextView for the name of the longhorn.-->
         <TextView
             android:id="@+id/outside_time"
             android:layout_width="wrap_content"
@@ -28,7 +27,6 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="2 hours" />
 
-        <!--This is the TextView for the hobbies of the longhorn.-->
         <TextView
             android:id="@+id/outside_rating"
             android:layout_width="wrap_content"
@@ -43,7 +41,6 @@
             app:layout_constraintTop_toBottomOf="@id/outside_time"
             tools:text="Okay" />
 
-        <!--This is the TextView for the age of the longhorn.-->
         <TextView
             android:id="@+id/outside_description"
             android:layout_width="wrap_content"

@@ -6,11 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".ConfettiScreen">
 
-    <Button
-        android:id="@+id/button"
+    <TextView
+        android:id="@+id/time_text"
+        app:layout_constraintBottom_toTopOf="@id/home_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text = "YOU SPENT 30 MINUTES OUTSIDE!"
+        android:textSize="50sp"
+        android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Confetti"
-        tools:layout_editor_absoluteX="181dp"
-        tools:layout_editor_absoluteY="364dp" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+    <Button
+        android:id="@+id/home_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HOME"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/time_text"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
