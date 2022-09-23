@@ -4,20 +4,18 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.core.view.marginTop
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-import java.lang.System
 import java.lang.System.currentTimeMillis
 import android.widget.Toast
 
+/**
+ * This is the MainActivity Class. It handles the main functionality
+ * of the app switching from Grass to Home Views.
+ */
 class MainActivity : AppCompatActivity() {
-    // Declaration for "buttons"
+    // Declarations for "buttons"
     private var actionImage: ImageView? = null
     private var logButton: Button? = null
     // States and variables
@@ -33,11 +31,6 @@ class MainActivity : AppCompatActivity() {
     private var timeEnd = 0;
     private var clickedHouse = false
 
-//    companion object {
-//        var currentState = MainActivity
-//    }
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -52,12 +45,14 @@ class MainActivity : AppCompatActivity() {
         // Set elements according to current state
         setViewElements()
 
-        // When user clicks the image, update the state information and proceed
+        // When user clicks the image, update the state information and proceeds
+        // based on that.
         actionImage!!.setOnClickListener {
             clickActionImage()
         }
 
-        // Setting up log button
+        // Setting up log button. The LogButton will take you to the LogScreen,
+        // which will display all past grass moments.
         logButton = findViewById(R.id.button2)
         logButton!!.setOnClickListener {
             val intent = Intent(this, LogScreen::class.java)
@@ -70,10 +65,6 @@ class MainActivity : AppCompatActivity() {
         outState.putString(ACTION_STATE, currentState)
         super.onSaveInstanceState(outState)
     }
-
-//    override fun onRestart() {
-//        super.onRestart()
-//    }
 
     // Updates state on click. Then update the view elemetns
     private fun clickActionImage() {
@@ -96,14 +87,6 @@ class MainActivity : AppCompatActivity() {
                 RatingScreen.timeSpent = (timeEnd - timeStart) / (1000.0 * 60)
                 Log.d("TIME", RatingScreen.timeSpent.toString())
                 this.startActivity(intent)
-                // TODO: COROUTINE TO ENSURE STATE CHANGE HAPPENS AFTER ACTIVITY
-                 currentState = GRASS
-                // startActivityForResult may be our solution, it is async and we wait for a result
-                // before doing something
-                // can have onResult returns 0 -> stay @ home screen
-                // onResult returns 1 -> change to grass string
-                // we could then configure this so that the back button returns a 0
-                // and clicking another button returns 1 depending on the context
             };
         }
 

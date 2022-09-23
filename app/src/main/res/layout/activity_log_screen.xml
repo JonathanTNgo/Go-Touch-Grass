@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="No past grass moments at this time."
+        android:text="You currently have no past Touch Grass moments."
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@id/grass_recycler_view"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,5 +24,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@id/past_grass_text"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 </FrameLayout>
