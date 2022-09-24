@@ -14,6 +14,7 @@ class LogScreen : AppCompatActivity() {
         binding = ActivityLogScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // The GrassLogAdapter is initialized.
         binding.grassRecyclerView.adapter = GrassLogAdapter(
             applicationContext,
             Layout.VERTICAL
@@ -24,5 +25,6 @@ class LogScreen : AppCompatActivity() {
 
         // Enable up button for backward navigation
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = this.resources?.getString(R.string.past_grass_title)
     }
 }

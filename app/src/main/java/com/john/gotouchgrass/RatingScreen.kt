@@ -19,10 +19,8 @@ import com.john.gotouchgrass.model.GrassMoment
 class RatingScreen: AppCompatActivity() {
     // Submit button
     private var submitButton: Button? = null
-    // Record radio button ratings
-    // Record activity details
-    // Save time
 
+    // This companion object helps us track the time a user spent outside.
     companion object {
         var timeSpent: Double = 0.0
     }
@@ -33,32 +31,32 @@ class RatingScreen: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = RatingScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.rating_screen)
 
-        // Once submit is pressed, go back to home screen
+
+        // The submit button is grabbed.
         submitButton = findViewById(R.id.submit)
 
-
+        // If the submit button is clicked, the screen is switched to the Confetti Screen.
         submitButton!!.setOnClickListener {
-            // Ends current activity. Currently returns back to home
-            // (which is good)
-//            binding.tipOptions.checkedRadioButtonId
             var radioGroup = binding.ratingOptions.checkedRadioButtonId
 
+            // The user's rating of their time outside is updated.
             val ratingString = when (radioGroup) {
                 R.id.great_option -> "Great"
                 R.id.okay_option -> "Okay"
                 else -> "Bad"
             }
 
+            // A new GrassMoment is created and added to the RecyclerView.
             val moment: GrassMoment = GrassMoment(timeSpent, binding.activityText.text.toString(), ratingString)
             DataSource.grassMoments.add(moment)
+
+            // The Confetti Screen is opened.
             val intent = Intent(this, ConfettiScreen::class.java)
             this.startActivity(intent)
         }
 
+        // There is no back button for this screen.
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
     }
-
 }

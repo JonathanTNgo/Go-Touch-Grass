@@ -1,5 +1,5 @@
 package com.john.gotouchgrass.const
 
 object Layout {
-    val VERTICAL = 1
+    const val VERTICAL = 1
 }

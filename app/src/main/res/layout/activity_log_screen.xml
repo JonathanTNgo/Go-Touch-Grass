@@ -7,18 +7,20 @@
     android:layout_height="match_parent"
         tools:context=".LogScreen">
 
+    <!--This text is displayed when the RecyclerView is empty..-->
     <TextView
         android:id="@+id/past_grass_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="You currently have no past Touch Grass moments."
+        android:text="@string/no_moments"
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@id/grass_recycler_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!--The RecyclerView that displays past GrassMoments.-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/grass_recycler_view"
         android:layout_width="match_parent"

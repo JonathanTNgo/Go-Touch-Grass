@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
 
         // Setting up log button. The LogButton will take you to the LogScreen,
         // which will display all past grass moments.
-        logButton = findViewById(R.id.button2)
+        logButton = findViewById(R.id.past_grass_button)
         logButton!!.setOnClickListener {
             val intent = Intent(this, LogScreen::class.java)
             this.startActivity(intent)
@@ -66,9 +66,10 @@ class MainActivity : AppCompatActivity() {
         super.onSaveInstanceState(outState)
     }
 
-    // Updates state on click. Then update the view elemetns
+    // Updates state on click. Then update the view elements.
     private fun clickActionImage() {
         when (currentState) {
+            // When the image is clicked in the GRASS state, it is moved to the HOME state.
             GRASS -> {
                 currentState = HOME
                 // Log current start time
@@ -77,12 +78,13 @@ class MainActivity : AppCompatActivity() {
                 val toast = Toast.makeText(this, "Start Time Logged", Toast.LENGTH_SHORT)
                 toast.show()
             };
+
+            // When the image is clicked in the HOME state, the timer ends and the screen
+            // is switched.
             HOME -> {
                 // Log current end time
                 timeEnd = currentTimeMillis().toInt();
                 // Switch to rating screen
-                // TODO: CAMERON, SEND (time end - time start) / 1000 to the rating screen
-                // TODO: /1000 because time is measured in milliseconds
                 val intent = Intent(this, RatingScreen::class.java)
                 RatingScreen.timeSpent = (timeEnd - timeStart) / (1000.0 * 60)
                 Log.d("TIME", RatingScreen.timeSpent.toString())
@@ -90,6 +92,7 @@ class MainActivity : AppCompatActivity() {
             };
         }
 
+        // The view elements are set based on the current state.
         setViewElements()
     }
 
@@ -97,6 +100,7 @@ class MainActivity : AppCompatActivity() {
     private fun setViewElements() {
         val textAction: TextView = findViewById(R.id.Welcome_txt)
 
+        // The text and image change depending on the current state.
         when (currentState) {
             GRASS -> {
                 textAction.text = resources.getString(R.string.grass_txt)
@@ -105,9 +109,7 @@ class MainActivity : AppCompatActivity() {
 
             HOME -> {
                 textAction.text = resources.getString(R.string.home_txt)
-//                textAction.text = ((timeEnd-timeStart)/1000).toString() + " seconds";
                 actionImage?.setImageResource(R.drawable.starting_house)
-
             }
         }
     }
