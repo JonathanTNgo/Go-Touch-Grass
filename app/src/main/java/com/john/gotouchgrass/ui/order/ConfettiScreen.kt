@@ -50,7 +50,7 @@ class ConfettiScreen : AppCompatActivity() {
 
         // The text element is set to display the amount of time a user spent outside.
         var textElement: TextView = findViewById(R.id.time_text)
-        textElement.text = this.resources?.getString(R.string.minute_string, viewModel.getTime())
+        //textElement.text = this.resources?.getString(R.string.minute_string, viewModel.getTime())
 
         // Confetti set up
         viewKonfetti = findViewById(R.id.konfettiView)

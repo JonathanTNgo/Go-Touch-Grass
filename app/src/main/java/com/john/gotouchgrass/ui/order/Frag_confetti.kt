@@ -6,27 +6,35 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.john.gotouchgrass.R
+import com.john.gotouchgrass.databinding.FragmentFragConfettiBinding
+import com.john.gotouchgrass.model.GrassViewModel
 
 class Frag_confetti : Fragment() {
+    private var _binding: FragmentFragConfettiBinding? = null
+    private val binding get() = _binding!!
 
-    companion object {
-        fun newInstance() = Frag_confetti()
-    }
-
-    private lateinit var viewModel: FragConfettiViewModel
+    private val viewModel: GrassViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_frag_confetti, container, false)
+        _binding = FragmentFragConfettiBinding.inflate(inflater, container, false)
+        val root: View = binding.root
+        binding.timeText.text = this.resources?.getString(R.string.minute_string, viewModel.getTime());
+        binding.homeButton.setOnClickListener {
+            findNavController().navigate(R.id.action_frag_confetti_to_grassScreen)
+        }
+        return root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(FragConfettiViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

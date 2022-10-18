@@ -41,5 +41,9 @@
         android:id="@+id/frag_confetti"
         android:name="com.john.gotouchgrass.ui.order.Frag_confetti"
         android:label="fragment_frag_confetti"
-        tools:layout="@layout/fragment_frag_confetti" />
+        tools:layout="@layout/fragment_frag_confetti" >
+        <action
+            android:id="@+id/action_frag_confetti_to_grassScreen"
+            app:destination="@id/grassScreen" />
+    </fragment>
 </navigation>
