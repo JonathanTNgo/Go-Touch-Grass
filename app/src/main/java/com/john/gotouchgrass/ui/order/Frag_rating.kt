@@ -6,13 +6,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.john.gotouchgrass.R
+import com.john.gotouchgrass.databinding.FragmentFragRatingBinding
+import com.john.gotouchgrass.databinding.FragmentGrassScreenBinding
 
 class Frag_rating : Fragment() {
+    // Fragment variables
+    private var _binding: FragmentFragRatingBinding? = null
+    private val binding get() = _binding!!
 
-    companion object {
-        fun newInstance() = Frag_rating()
-    }
+
 
     private lateinit var viewModel: FragRatingViewModel
 
@@ -20,13 +24,24 @@ class Frag_rating : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_frag_rating, container, false)
+        _binding = FragmentFragRatingBinding.inflate(inflater, container, false)
+        val root: View = binding.root
+
+        // Disables the hint when the activity text box is clicked
+        binding.activityText.setOnFocusChangeListener(View.OnFocusChangeListener { v, hasFocus ->
+            if (hasFocus) binding.activityText.setHint("")
+            else binding.activityText.setHint("What did you do?\\n Edit me!")
+        })
+
+        // When button is clicked, save text and switch to confetti fragment
+        binding.submit.setOnClickListener {
+            findNavController().navigate(R.id.action_frag_rating_to_frag_confetti)
+        }
+        return root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(FragRatingViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
-
 }

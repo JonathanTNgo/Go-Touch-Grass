@@ -6,11 +6,6 @@
     app:startDestination="@id/grassScreen">
 
     <activity
-        android:id="@+id/ratingScreen"
-        android:name="com.john.gotouchgrass.ui.order.RatingScreen"
-        android:label="rating_screen"
-        tools:layout="@layout/rating_screen" />
-    <activity
         android:id="@+id/confettiScreen"
         android:name="com.john.gotouchgrass.ui.order.ConfettiScreen"
         android:label="activity_confetti_screen"
@@ -30,7 +25,21 @@
         android:label="fragment_home_screen"
         tools:layout="@layout/fragment_home_screen" >
         <action
-            android:id="@+id/action_homeScreen_to_ratingScreen"
-            app:destination="@id/ratingScreen" />
+            android:id="@+id/action_homeScreen_to_frag_rating"
+            app:destination="@id/frag_rating" />
     </fragment>
+    <fragment
+        android:id="@+id/frag_rating"
+        android:name="com.john.gotouchgrass.ui.order.Frag_rating"
+        android:label="fragment_frag_rating"
+        tools:layout="@layout/fragment_frag_rating" >
+        <action
+            android:id="@+id/action_frag_rating_to_frag_confetti"
+            app:destination="@id/frag_confetti" />
+    </fragment>
+    <fragment
+        android:id="@+id/frag_confetti"
+        android:name="com.john.gotouchgrass.ui.order.Frag_confetti"
+        android:label="fragment_frag_confetti"
+        tools:layout="@layout/fragment_frag_confetti" />
 </navigation>
