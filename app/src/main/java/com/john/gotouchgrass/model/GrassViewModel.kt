@@ -19,7 +19,7 @@ class GrassViewModel: ViewModel() {
     }
 
     fun getTime(): Double {
-        return timeTotal.toDouble()
+        return (timeTotal / 1000.0)
     }
 
     fun resetTime() {

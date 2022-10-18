@@ -25,8 +25,9 @@ class Frag_confetti : Fragment() {
     ): View? {
         _binding = FragmentFragConfettiBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        binding.timeText.text = this.resources?.getString(R.string.minute_string, viewModel.getTime());
+        binding.timeText.text = this.resources.getString(R.string.minute_string, viewModel.getTime())
         binding.homeButton.setOnClickListener {
+            viewModel.resetTime()
             findNavController().navigate(R.id.action_frag_confetti_to_grassScreen)
         }
         return root
