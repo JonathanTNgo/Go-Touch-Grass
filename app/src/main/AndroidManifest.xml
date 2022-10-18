@@ -14,12 +14,12 @@
         android:theme="@style/Theme.GoTouchGrass"
         tools:targetApi="31">
         <activity
-            android:name=".ConfettiScreen">
+            android:name=".ui.order.ConfettiScreen">
         </activity>
-        <activity android:name=".LogScreen">
+        <activity android:name=".ui.order.LogScreen">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".LogScreen" />
+                android:value=".ui.order.LogScreen" />
         </activity>
         <activity
             android:name=".MainActivity"
@@ -30,10 +30,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RatingScreen">
+        <activity android:name=".ui.order.RatingScreen">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".RatingScreen" />
+                android:value=".ui.order.RatingScreen" />
         </activity>
     </application>
 

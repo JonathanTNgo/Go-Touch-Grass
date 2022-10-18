@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homescreen_navigation"
+    app:startDestination="@id/grassScreen">
+
+    <activity
+        android:id="@+id/ratingScreen"
+        android:name="com.john.gotouchgrass.ui.order.RatingScreen"
+        android:label="rating_screen"
+        tools:layout="@layout/rating_screen" />
+    <activity
+        android:id="@+id/confettiScreen"
+        android:name="com.john.gotouchgrass.ui.order.ConfettiScreen"
+        android:label="activity_confetti_screen"
+        tools:layout="@layout/activity_confetti_screen" />
+    <fragment
+        android:id="@+id/grassScreen"
+        android:name="com.john.gotouchgrass.ui.order.GrassScreen"
+        android:label="fragment_grass_screen"
+        tools:layout="@layout/fragment_grass_screen" >
+        <action
+            android:id="@+id/action_grassScreen_to_homeScreen"
+            app:destination="@id/homeScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeScreen"
+        android:name="com.john.gotouchgrass.ui.order.HomeScreen"
+        android:label="fragment_home_screen"
+        tools:layout="@layout/fragment_home_screen" >
+        <action
+            android:id="@+id/action_homeScreen_to_ratingScreen"
+            app:destination="@id/ratingScreen" />
+    </fragment>
+</navigation>

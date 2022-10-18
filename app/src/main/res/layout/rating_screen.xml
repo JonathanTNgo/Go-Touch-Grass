@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RatingScreen">
+    tools:context=".ui.order.RatingScreen">
 
     <!--This the TextBox that users can enter their description about their
     time outside. -->

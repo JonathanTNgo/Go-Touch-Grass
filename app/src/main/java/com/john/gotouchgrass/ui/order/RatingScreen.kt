@@ -1,17 +1,11 @@
-package com.john.gotouchgrass
+package com.john.gotouchgrass.ui.order
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.provider.MediaStore
-import android.util.Log
 import android.widget.Button
-import android.widget.RadioButton
-import android.widget.RadioGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.john.gotouchgrass.R
 import com.john.gotouchgrass.data.DataSource
-import com.john.gotouchgrass.databinding.ActivityMainBinding
 import com.john.gotouchgrass.databinding.RatingScreenBinding
 import com.john.gotouchgrass.model.GrassMoment
 

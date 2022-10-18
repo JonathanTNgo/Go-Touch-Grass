@@ -1,10 +1,12 @@
-package com.john.gotouchgrass
+package com.john.gotouchgrass.ui.order
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.john.gotouchgrass.MainActivity
+import com.john.gotouchgrass.R
 import nl.dionsegijn.konfetti.core.Angle
 import nl.dionsegijn.konfetti.core.Party
 import nl.dionsegijn.konfetti.core.Position

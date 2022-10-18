@@ -1,7 +1,8 @@
-package com.john.gotouchgrass
+package com.john.gotouchgrass.ui.order
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.john.gotouchgrass.R
 import com.john.gotouchgrass.adapter.GrassLogAdapter
 import com.john.gotouchgrass.const.Layout
 import com.john.gotouchgrass.databinding.ActivityLogScreenBinding
