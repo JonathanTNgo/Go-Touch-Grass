@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.activityViewModels
 import com.john.gotouchgrass.MainActivity
 import com.john.gotouchgrass.R
+import com.john.gotouchgrass.model.GrassViewModel
 import nl.dionsegijn.konfetti.core.Angle
 import nl.dionsegijn.konfetti.core.Party
 import nl.dionsegijn.konfetti.core.Position
@@ -48,7 +50,7 @@ class ConfettiScreen : AppCompatActivity() {
 
         // The text element is set to display the amount of time a user spent outside.
         var textElement: TextView = findViewById(R.id.time_text)
-        textElement.text = this.resources?.getString(R.string.minute_string, RatingScreen.timeSpent)
+        textElement.text = this.resources?.getString(R.string.minute_string, viewModel.getTime())
 
         // Confetti set up
         viewKonfetti = findViewById(R.id.konfettiView)
