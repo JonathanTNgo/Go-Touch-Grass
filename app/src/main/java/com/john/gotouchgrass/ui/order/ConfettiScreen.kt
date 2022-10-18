@@ -19,24 +19,24 @@ import java.util.concurrent.TimeUnit
 
 // Class for creating the confetti animation
 // ** CREDIT TO https://github.com/DanielMartinus/Konfetti/ **
-class Presets {
-    companion object {
-        fun rain(): List<Party> {
-            return listOf(
-                Party(
-                    speed = 0f,
-                    maxSpeed = 15f,
-                    damping = 0.9f,
-                    angle = Angle.BOTTOM,
-                    spread = Spread.ROUND,
-                    colors = listOf(0xfce18a, 0xff726d, 0xf4306d, 0xb48def),
-                    emitter = Emitter(duration = 5, TimeUnit.SECONDS).perSecond(100),
-                    position = Position.Relative(0.0, 0.0).between(Position.Relative(1.0, 0.0))
-                )
-            )
-        }
-    }
-}
+//class Presets {
+//    companion object {
+//        fun rain(): List<Party> {
+//            return listOf(
+//                Party(
+//                    speed = 0f,
+//                    maxSpeed = 15f,
+//                    damping = 0.9f,
+//                    angle = Angle.BOTTOM,
+//                    spread = Spread.ROUND,
+//                    colors = listOf(0xfce18a, 0xff726d, 0xf4306d, 0xb48def),
+//                    emitter = Emitter(duration = 5, TimeUnit.SECONDS).perSecond(100),
+//                    position = Position.Relative(0.0, 0.0).between(Position.Relative(1.0, 0.0))
+//                )
+//            )
+//        }
+//    }
+//}
 
 class ConfettiScreen : AppCompatActivity() {
     private lateinit var viewKonfetti: KonfettiView
