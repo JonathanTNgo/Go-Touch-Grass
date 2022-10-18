@@ -22,7 +22,7 @@ class HomeScreen : Fragment() {
         _binding = FragmentHomeScreenBinding.inflate(inflater, container, false)
         val root: View = binding.root
         binding.grassImage.setOnClickListener {
-            findNavController().navigate(R.id.action_homeScreen_to_ratingScreen)
+            findNavController().navigate(R.id.action_homeScreen_to_frag_rating)
         }
         return root
     }

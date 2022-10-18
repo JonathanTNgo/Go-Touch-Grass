@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".ui.order.GrassScreen">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.order.GrassScreen">
 
 
-<!--This is the text that appears on the home screen.
-It can either be about touching grass or going home.
-It is initially about grass. -->
-<TextView
-    android:id="@+id/Welcome_txt"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="300dp"
-    android:text="@string/grass_txt"
-    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-    android:textSize="35sp"
-    android:textStyle="bold"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    <!--This is the text that appears on the home screen.
+    It can either be about touching grass or going home.
+    It is initially about grass. -->
+    <TextView
+        android:id="@+id/Welcome_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="300dp"
+        android:text="@string/grass_txt"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-<!--This is the image on the home screen. It can either be a house
-or grass image. -->
-<ImageView
-    android:id="@+id/grass_image"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="75dp"
-    android:layout_marginBottom="25dp"
-    android:adjustViewBounds="true"
-    android:maxWidth="300dp"
-    android:maxHeight="300dp"
-    android:scaleType="fitCenter"
-    android:visibility="visible"
-    app:layout_constraintBottom_toTopOf="@id/past_grass_button"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/Welcome_txt"
-    app:srcCompat="@drawable/starting_grass" />
+    <!--This is the image on the home screen. It can either be a house
+    or grass image. -->
+    <ImageView
+        android:id="@+id/grass_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:layout_marginBottom="25dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="300dp"
+        android:maxHeight="300dp"
+        android:scaleType="fitCenter"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/past_grass_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Welcome_txt"
+        app:srcCompat="@drawable/starting_grass" />
 
-<!--This button will display past grass moments. -->
-<Button
-    android:id="@+id/past_grass_button"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="100dp"
-    android:scaleX="2"
-    android:scaleY="2"
-    android:textSize="10sp"
-    android:text="@string/past_moments"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/grass_image" />
+    <!--This button will display past grass moments. -->
+    <Button
+        android:id="@+id/past_grass_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:textSize="10sp"
+        android:text="@string/past_moments"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grass_image" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
