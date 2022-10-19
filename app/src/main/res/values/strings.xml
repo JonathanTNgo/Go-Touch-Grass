@@ -15,4 +15,6 @@
     <string name="rating_okay">OKAY</string>
     <string name="submit_button">SUBMIT</string>
     <string name="past_grass_title">Past Touch Grass Moments</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

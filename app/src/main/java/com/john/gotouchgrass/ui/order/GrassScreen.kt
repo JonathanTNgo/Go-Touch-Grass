@@ -31,8 +31,7 @@ class GrassScreen : Fragment() {
         }
 
         binding.pastGrassButton .setOnClickListener {
-            val intent = Intent(activity, LogScreen::class.java)
-            this.startActivity(intent)
+            findNavController().navigate(R.id.action_grassScreen_to_frag_log)
         }
 
         return root

@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_grassScreen_to_homeScreen"
             app:destination="@id/homeScreen" />
+        <action
+            android:id="@+id/action_grassScreen_to_frag_log"
+            app:destination="@id/frag_log" />
     </fragment>
     <fragment
         android:id="@+id/homeScreen"
@@ -46,4 +49,9 @@
             android:id="@+id/action_frag_confetti_to_grassScreen"
             app:destination="@id/grassScreen" />
     </fragment>
+    <fragment
+        android:id="@+id/frag_log"
+        android:name="com.john.gotouchgrass.ui.order.Frag_log"
+        android:label="fragment_frag_log"
+        tools:layout="@layout/fragment_frag_log" />
 </navigation>
