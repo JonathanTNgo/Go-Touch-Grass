@@ -8,7 +8,7 @@
     <string name="home_button">Home</string>
     <string name="past_moments">Past Grass Moments</string>
     <string name="no_moments">You currently have no past Touch Grass moments.</string>
-    <string name="hint_edit">What did you do?\n Edit me!</string>
+    <string name="hint_edit">What did you do?</string>
     <string name="hint_rate">RATE EXPERIENCE</string>
     <string name="rating_bad">BAD</string>
     <string name="rating_good">GOOD</string>

@@ -1,45 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:outlineProvider="paddedBounds"
     tools:context=".ui.order.Frag_rating">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".RatingScreen">
 
-        <!--This the TextBox that users can enter their description about their
-        time outside. -->
-        <EditText
+        <!--The cost of service is entered here-->
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/activity_text"
-            android:layout_width="300sp"
-            android:layout_height="300sp"
-            android:layout_centerInParent="true"
-            android:layout_marginBottom="300dp"
-            android:backgroundTintMode="add"
-            android:elegantTextHeight="false"
-            android:gravity="center"
-            android:hint="@string/hint_edit"
-            android:inputType="textMultiLine"
-            android:singleLine="false"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColorHint="#757575"
-            android:textSize="20sp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:hint="What did you do?"
+            android:outlineProvider="bounds"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"></EditText>
+            app:layout_constraintTop_toTopOf="parent"
+            app:boxBackgroundMode="outline">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cost_of_service_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:imeOptions="actionDone"
+                android:inputType="textMultiLine"
+                android:maxLength="400"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--This the TextBox that users can enter their description about their
+        time outside. -->
+        <!--        <EditText-->
+        <!--            android:id="@+id/activity_text"-->
+        <!--            android:layout_width="300sp"-->
+        <!--            android:layout_height="300sp"-->
+        <!--            android:layout_centerInParent="true"-->
+        <!--            android:layout_marginBottom="300dp"-->
+        <!--            android:backgroundTintMode="add"-->
+        <!--            android:elegantTextHeight="false"-->
+        <!--            android:gravity="center"-->
+        <!--            android:hint="@string/hint_edit"-->
+        <!--            android:inputType="textMultiLine"-->
+        <!--            android:singleLine="false"-->
+        <!--            android:textAppearance="@style/TextAppearance.AppCompat.Body1"-->
+        <!--            android:textColorHint="#757575"-->
+        <!--            android:textSize="20sp"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent"></EditText>-->
 
         <!--This text tells the user to rate their experience. -->
         <TextView
             android:id="@+id/rate_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
             android:text="@string/hint_rate"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="18sp"
