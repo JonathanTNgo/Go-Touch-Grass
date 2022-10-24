@@ -19,7 +19,7 @@
             android:layout_height="300dp"
             android:hint="What did you do?"
             android:outlineProvider="bounds"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/rate_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

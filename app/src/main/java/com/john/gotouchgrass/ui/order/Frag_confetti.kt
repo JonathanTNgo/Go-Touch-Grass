@@ -54,7 +54,7 @@ class Frag_confetti : Fragment() {
     ): View? {
         _binding = FragmentFragConfettiBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        binding.timeText.text = this.resources.getString(R.string.minute_string, viewModel.getTime())
+        binding.timeText.text = this.resources.getString(R.string.minute_string, viewModel.getSeconds())
         // Confetti set up
         viewKonfetti = binding.konfettiView
         viewKonfetti.start(Presets.rain())

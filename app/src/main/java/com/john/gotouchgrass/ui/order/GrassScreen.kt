@@ -31,7 +31,7 @@ class GrassScreen : Fragment() {
         }
 
         binding.pastGrassButton .setOnClickListener {
-            findNavController().navigate(R.id.action_grassScreen_to_frag_log)
+            findNavController().navigate(R.id.action_grassScreen_to_logScreen)
         }
 
         return root
