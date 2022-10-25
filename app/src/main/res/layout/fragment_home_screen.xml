@@ -37,7 +37,7 @@
         android:maxHeight="300dp"
         android:scaleType="fitCenter"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@id/past_grass_button"
+        app:layout_constraintBottom_toTopOf="@id/camera_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Welcome_txt"

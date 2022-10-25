@@ -18,12 +18,12 @@ class GrassViewModel: ViewModel() {
         timeTotal = currentTimeMillis().toInt() - timeStart
     }
 
-    fun getMinutes(): Int {
-        return (timeTotal / 1000 / 60)
+    fun getMinutes(): Double {
+        return (timeTotal / 1000 / 60).toDouble()
     }
 
-    fun getSeconds(): Int {
-        return (timeTotal / 1000 % 60)
+    fun getSeconds(): Double {
+        return (timeTotal / 1000 % 60).toDouble()
     }
 
     fun resetTime() {
