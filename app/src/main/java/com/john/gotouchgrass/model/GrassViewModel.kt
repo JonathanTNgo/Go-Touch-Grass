@@ -16,8 +16,7 @@ class GrassViewModel: ViewModel() {
     // Stops timer and stores the time length in seconds (initially in milliseconds)
     fun stopTime() {
         timeTotal = currentTimeMillis().toInt() - timeStart
-//        timeSeconds = (timeTotal / 1000 % 60)
-        timeSeconds = 3680
+        timeSeconds = (timeTotal / 1000 % 60)
     }
 
     // Returns the timeSeconds as a double for printf
