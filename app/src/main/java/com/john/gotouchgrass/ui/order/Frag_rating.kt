@@ -9,8 +9,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.john.gotouchgrass.R
+import com.john.gotouchgrass.data.DataSource
 import com.john.gotouchgrass.databinding.FragmentFragRatingBinding
 import com.john.gotouchgrass.databinding.FragmentGrassScreenBinding
+import com.john.gotouchgrass.model.GrassMoment
 import com.john.gotouchgrass.model.GrassViewModel
 
 class Frag_rating : Fragment() {
@@ -34,6 +36,8 @@ class Frag_rating : Fragment() {
 
         // When button is clicked, save text and switch to confetti fragment
         binding.submit.setOnClickListener {
+            val moment: GrassMoment = GrassMoment(viewModel.getTime(), binding.rateText.text.toString())
+            DataSource.grassMoments.add(moment)
             findNavController().navigate(R.id.action_frag_rating_to_frag_confetti)
         }
         return root

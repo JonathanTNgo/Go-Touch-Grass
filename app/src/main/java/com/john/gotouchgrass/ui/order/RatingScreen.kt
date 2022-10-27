@@ -42,8 +42,8 @@ class RatingScreen: AppCompatActivity() {
             }
 
             // A new GrassMoment is created and added to the RecyclerView.
-            val moment: GrassMoment = GrassMoment(timeSpent, binding.activityText.text.toString(), ratingString)
-            DataSource.grassMoments.add(moment)
+            //val moment: GrassMoment = GrassMoment(timeSpent, binding.activityText.text.toString(), ratingString)
+            //DataSource.grassMoments.add(moment)
 
             // The Confetti Screen is opened.
             val intent = Intent(this, ConfettiScreen::class.java)

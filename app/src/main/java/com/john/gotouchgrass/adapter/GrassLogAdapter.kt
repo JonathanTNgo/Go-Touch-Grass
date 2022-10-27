@@ -23,7 +23,7 @@ class GrassLogAdapter(
     class GrassViewHolder(view: View?): RecyclerView.ViewHolder(view!!) {
         val timeOutside: TextView? = view?.findViewById(R.id.outside_time)
         val describeOutside: TextView? = view?.findViewById(R.id.outside_description)
-        val ratingOutside: TextView? = view?.findViewById(R.id.outside_rating)
+
     }
 
     /**
@@ -53,7 +53,5 @@ class GrassLogAdapter(
         holder.timeOutside?.text = res?.getString(R.string.time_spent, item.timeSpentOutside)
         // The outside description is set.
         holder.describeOutside?.text = item.description
-        // The rating is set.
-        holder.ratingOutside?.text = res?.getString(R.string.rating, item.rating)
     }
 }

@@ -9,7 +9,5 @@ data class GrassMoment(
     // The time a user spent outside.
     val timeSpentOutside: Double,
     // The user's written description of their time outside.
-    val description: String,
-    // The rating a user gave their time outside (OKAY, BAD, GREAT).
-    val rating: String,
+    val description: String
 )

@@ -19,16 +19,16 @@ class GrassViewModel: ViewModel() {
         timeSeconds = (timeTotal / 1000 % 60)
     }
 
-    // Returns the timeSeconds as a double for printf
-    fun getSeconds(): Double {
-        return timeSeconds.toDouble()
+    // Returns the double time, in minutes
+    fun getTime(): Double {
+        return timeSeconds / 60.0
     }
 
     // Returns a string representing the time.
     // If time < 60 seconds, string will say seconds
     // If time > 60 seconds, string will say minutes + seconds
     // If time > 60 minutes, string will say hours + minutes
-    fun getTime(): String {
+    fun getTimeString(): String {
         when (timeSeconds)
         {
             // Print in seconds
