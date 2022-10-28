@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         tools:context=".RatingScreen">
 
-        <!--The cost of service is entered here-->
+        <!--The activity description is stored here-->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/activity_text"
             android:layout_width="300dp"
@@ -26,7 +26,7 @@
             app:boxBackgroundMode="outline">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/cost_of_service_edit_text"
+                android:id="@+id/description"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"

@@ -1,5 +1,6 @@
 package com.john.gotouchgrass.model
 
+import android.graphics.Bitmap
 import androidx.lifecycle.ViewModel
 import java.lang.System.currentTimeMillis
 
@@ -7,6 +8,7 @@ class GrassViewModel: ViewModel() {
     private var timeStart = 0
     private var timeTotal = 0
     private var timeSeconds = 0
+    private var bitmap: Bitmap? = null
 
     // Starts timer
     fun startTime() {
@@ -47,5 +49,13 @@ class GrassViewModel: ViewModel() {
     fun resetTime() {
         timeStart = 0
         timeTotal = 0
+    }
+
+    fun storeImage(image: Bitmap) {
+        bitmap = image;
+    }
+
+    fun getImage(): Bitmap? {
+        return bitmap
     }
 }

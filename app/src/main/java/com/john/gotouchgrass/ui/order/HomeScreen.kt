@@ -126,6 +126,7 @@ class HomeScreen : Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE && data != null){
             logo = binding.iv
+            viewModel.storeImage(data.extras?.get("data") as Bitmap)
             logo.setImageBitmap(data.extras?.get("data") as Bitmap)
         }
     }
