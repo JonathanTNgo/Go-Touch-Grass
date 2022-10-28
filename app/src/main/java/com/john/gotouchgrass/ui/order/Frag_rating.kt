@@ -36,15 +36,19 @@ class Frag_rating : Fragment() {
 
         // When button is clicked, save text and switch to confetti fragment
         binding.submit.setOnClickListener {
-            val moment: GrassMoment? = viewModel.getImage()?.let { it1 ->
-                GrassMoment(viewModel.getTime(), binding.activityText.editText?.text.toString(),
-                    it1
-                )
-            }
+            // Sample code for adding image onto recycler view
+//            val moment: GrassMoment? = viewModel.getImage()?.let { it1 ->
+//                GrassMoment(viewModel.getTime(), binding.activityText.editText?.text.toString(),
+//                    it1
+//                )
+//            }
+//
+//            if (moment != null) {
+//                DataSource.grassMoments.add(moment)
+//            }
 
-            if (moment != null) {
-                DataSource.grassMoments.add(moment)
-            }
+            val moment: GrassMoment = GrassMoment(viewModel.getTime(), binding.activityText.editText?.text.toString())
+            DataSource.grassMoments.add(moment)
             findNavController().navigate(R.id.action_frag_rating_to_frag_confetti)
         }
 

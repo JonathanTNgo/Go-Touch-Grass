@@ -12,5 +12,5 @@ data class GrassMoment(
     // The user's written description of their time outside.
     val description: String,
     // The user's activity image
-    val activityImage: Bitmap
+//    val activityImage: Bitmap
 )
