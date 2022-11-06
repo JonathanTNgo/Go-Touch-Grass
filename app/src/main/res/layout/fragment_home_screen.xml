@@ -27,7 +27,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv"
         app:layout_constraintVertical_bias="0.807" />
 
     <ImageView
@@ -64,9 +64,10 @@
 
     <ImageView
         android:id="@+id/iv"
-        android:layout_width="330dp"
-        android:layout_height="190dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
+        app:layout_constraintBottom_toTopOf="@+id/Welcome_txt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

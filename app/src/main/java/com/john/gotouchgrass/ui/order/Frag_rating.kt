@@ -47,7 +47,7 @@ class Frag_rating : Fragment() {
 //                DataSource.grassMoments.add(moment)
 //            }
 
-            val moment: GrassMoment = GrassMoment(viewModel.getTime(), binding.activityText.editText?.text.toString())
+            val moment: GrassMoment = GrassMoment(viewModel.getTime(), binding.activityText.editText?.text.toString(), viewModel.getImage())
             DataSource.grassMoments.add(moment)
             findNavController().navigate(R.id.action_frag_rating_to_frag_confetti)
         }
