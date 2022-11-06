@@ -17,4 +17,7 @@
     <string name="past_grass_title">Past Touch Grass Moments</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="grass_description">A grass icon. Click this to go outside!</string>
+    <string name="home_description">This is the inside button. Click it to go inside!</string>
+    <string name="picture_description">Picture taken by camera</string>
 </resources>

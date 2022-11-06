@@ -1,93 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.order.RatingScreen">
+    android:layout_width="match_parent">
 
-    <!--This the TextBox that users can enter their description about their
-    time outside. -->
-    <EditText
-        android:id="@+id/activity_text"
-        android:layout_width="300sp"
-        android:layout_height="300sp"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="300dp"
-        android:backgroundTintMode="add"
-        android:elegantTextHeight="false"
-        android:gravity="center"
-        android:hint="@string/hint_edit"
-        android:inputType="textMultiLine"
-        android:singleLine="false"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColorHint="#757575"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></EditText>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.order.RatingScreen">
 
-    <!--This text tells the user to rate their experience. -->
-    <TextView
-        android:id="@+id/rate_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="@string/hint_rate"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/rating_options"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/activity_text" />
+        <!--This the TextBox that users can enter their description about their
+        time outside. -->
+        <EditText
+            android:id="@+id/activity_text"
+            android:layout_width="300sp"
+            android:layout_height="300sp"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="300dp"
+            android:backgroundTintMode="add"
+            android:elegantTextHeight="false"
+            android:gravity="center"
+            android:hint="@string/hint_edit"
+            android:inputType="textMultiLine"
+            android:singleLine="false"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColorHint="#757575"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></EditText>
 
-    <!--This displays the buttons users can select to rate their experience.-->
-    <RadioGroup
-        android:id="@+id/rating_options"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:checkedButton="@id/okay_option"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rate_text">
-
-        <!-- BAD RATING -->
-        <RadioButton
-            android:id="@+id/bad_option"
+        <!--This text tells the user to rate their experience. -->
+        <TextView
+            android:id="@+id/rate_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/rating_bad" />
+            android:layout_marginTop="100dp"
+            android:text="@string/hint_rate"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/rating_options"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activity_text" />
 
-        <!-- OKAY RATING -->
-        <RadioButton
-            android:id="@+id/okay_option"
+        <!--This displays the buttons users can select to rate their experience.-->
+        <RadioGroup
+            android:id="@+id/rating_options"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/rating_okay" />
+            android:checkedButton="@id/okay_option"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rate_text">
 
-        <!-- GOOD RATING -->
-        <RadioButton
-            android:id="@+id/great_option"
+            <!-- BAD RATING -->
+            <RadioButton
+                android:id="@+id/bad_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rating_bad" />
+
+            <!-- OKAY RATING -->
+            <RadioButton
+                android:id="@+id/okay_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rating_okay" />
+
+            <!-- GOOD RATING -->
+            <RadioButton
+                android:id="@+id/great_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rating_good" />
+        </RadioGroup>
+
+        <!--The user will click this to enter their information.-->
+        <Button
+            android:id="@+id/submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/rating_good" />
-    </RadioGroup>
+            android:scaleX="2"
+            android:scaleY="2"
+            android:text="@string/submit_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rating_options" />
 
-    <!--The user will click this to enter their information.-->
-    <Button
-        android:id="@+id/submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleX="2"
-        android:scaleY="2"
-        android:text="@string/submit_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rating_options" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

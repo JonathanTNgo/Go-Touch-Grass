@@ -1,99 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:outlineProvider="paddedBounds"
-    tools:context=".ui.order.Frag_rating">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent">
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".RatingScreen">
+        android:outlineProvider="paddedBounds"
+        tools:context=".ui.order.Frag_rating">
 
-        <!--The activity description is stored here-->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/activity_text"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:hint="What did you do?"
-            android:outlineProvider="bounds"
-            app:layout_constraintBottom_toTopOf="@id/rate_text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:boxBackgroundMode="outline">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".RatingScreen">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/description"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:imeOptions="actionDone"
-                android:inputType="textMultiLine"
-                android:maxLength="400"/>
+            <!--The activity description is stored here-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/activity_text"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:hint="What did you do?"
+                android:outlineProvider="bounds"
+                app:layout_constraintBottom_toTopOf="@id/rate_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:boxBackgroundMode="outline">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="textMultiLine"
+                    android:maxLength="400"/>
 
-        <!--This the TextBox that users can enter their description about their
-        time outside. -->
-        <!--        <EditText-->
-        <!--            android:id="@+id/activity_text"-->
-        <!--            android:layout_width="300sp"-->
-        <!--            android:layout_height="300sp"-->
-        <!--            android:layout_centerInParent="true"-->
-        <!--            android:layout_marginBottom="300dp"-->
-        <!--            android:backgroundTintMode="add"-->
-        <!--            android:elegantTextHeight="false"-->
-        <!--            android:gravity="center"-->
-        <!--            android:hint="@string/hint_edit"-->
-        <!--            android:inputType="textMultiLine"-->
-        <!--            android:singleLine="false"-->
-        <!--            android:textAppearance="@style/TextAppearance.AppCompat.Body1"-->
-        <!--            android:textColorHint="#757575"-->
-        <!--            android:textSize="20sp"-->
-        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toTopOf="parent"></EditText>-->
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <!--This text tells the user to rate their experience. -->
-        <TextView
-            android:id="@+id/rate_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/hint_rate"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/submit"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/activity_text" />
+            <!--This the TextBox that users can enter their description about their
+            time outside. -->
+            <!--        <EditText-->
+            <!--            android:id="@+id/activity_text"-->
+            <!--            android:layout_width="300sp"-->
+            <!--            android:layout_height="300sp"-->
+            <!--            android:layout_centerInParent="true"-->
+            <!--            android:layout_marginBottom="300dp"-->
+            <!--            android:backgroundTintMode="add"-->
+            <!--            android:elegantTextHeight="false"-->
+            <!--            android:gravity="center"-->
+            <!--            android:hint="@string/hint_edit"-->
+            <!--            android:inputType="textMultiLine"-->
+            <!--            android:singleLine="false"-->
+            <!--            android:textAppearance="@style/TextAppearance.AppCompat.Body1"-->
+            <!--            android:textColorHint="#757575"-->
+            <!--            android:textSize="20sp"-->
+            <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--            app:layout_constraintEnd_toEndOf="parent"-->
+            <!--            app:layout_constraintStart_toStartOf="parent"-->
+            <!--            app:layout_constraintTop_toTopOf="parent"></EditText>-->
+
+            <!--This text tells the user to rate their experience. -->
+            <TextView
+                android:id="@+id/rate_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hint_rate"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/submit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/activity_text" />
 
 
-        <!--The user will click this to enter their information.-->
-        <Button
-            android:id="@+id/submit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleX="2"
-            android:scaleY="2"
-            android:text="@string/submit_button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rate_text" />
+            <!--The user will click this to enter their information.-->
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:text="@string/submit_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rate_text" />
 
-<!--            <ImageView-->
-<!--                android:id="@+id/iv"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="500dp"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent" />-->
+    <!--            <ImageView-->
+    <!--                android:id="@+id/iv"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="500dp"-->
+    <!--                app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintTop_toTopOf="parent" />-->
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+        </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
+</ScrollView>
