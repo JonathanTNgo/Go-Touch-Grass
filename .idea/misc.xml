@@ -4,14 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Owner/AndroidStudioProjects/GoTouchGrass/app/src/main/res/layout/activity_main.xml" value="0.335" />
+        <entry key="app/src/main/res/layout-land/fragment_frag_rating.xml" value="0.20520833333333333" />
         <entry key="app/src/main/res/layout/activity_confetti_screen.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_log_screen.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_log_screen.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_logs_screen.xml" value="0.17980072463768115" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.20833333333333334" />
         <entry key="app/src/main/res/layout/fragment_frag_confetti.xml" value="0.2210144927536232" />
         <entry key="app/src/main/res/layout/fragment_frag_daily.xml" value="0.23324275362318841" />
         <entry key="app/src/main/res/layout/fragment_frag_log.xml" value="0.18885869565217392" />
-        <entry key="app/src/main/res/layout/fragment_frag_rating.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_frag_rating.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_grass_screen.xml" value="0.23958333333333334" />
         <entry key="app/src/main/res/layout/fragment_home_screen.xml" value="0.1" />
         <entry key="app/src/main/res/layout/log_screen_item.xml" value="0.335" />
