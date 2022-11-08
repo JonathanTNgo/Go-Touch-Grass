@@ -3,6 +3,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.john.gotouchgrass.R
@@ -23,7 +24,7 @@ class GrassLogAdapter(
     class GrassViewHolder(view: View?): RecyclerView.ViewHolder(view!!) {
         val timeOutside: TextView? = view?.findViewById(R.id.outside_time)
         val describeOutside: TextView? = view?.findViewById(R.id.outside_description)
-
+        val imageOutside: ImageView? = view?.findViewById(R.id.activity_image)
     }
 
     /**
@@ -53,5 +54,7 @@ class GrassLogAdapter(
         holder.timeOutside?.text = res?.getString(R.string.time_spent, item.timeSpentOutside)
         // The outside description is set.
         holder.describeOutside?.text = item.description
+        // The image is set.
+        holder.imageOutside?.setImageBitmap(item.activityImage)
     }
 }
