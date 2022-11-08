@@ -31,37 +31,31 @@ class GrassScreen : Fragment()  {
             findNavController().navigate(R.id.action_grassScreen_to_homeScreen)
         }
 
-        binding.pastGrassButton .setOnClickListener {
-            findNavController().navigate(R.id.action_grassScreen_to_logScreen)
-        }
+//        binding.pastGrassButton .setOnClickListener {
+//            findNavController().navigate(R.id.action_grassScreen_to_logScreen)
+//        }
         super.onCreate(savedInstanceState)
         root.setOnTouchListener(object : OnSwipeTouchListener(activity) {
-            override fun onSwipeLeft() {
-                super.onSwipeLeft()
-                Log.d( "Left", "WENT left")
-                Toast.makeText(activity, "Swipe Left gesture detected",
-                    Toast.LENGTH_SHORT)
-                    .show()
-            }
             override fun onSwipeRight() {
                 super.onSwipeRight()
                 Log.d( "Right", "WENT right")
+                findNavController().navigate(R.id.action_grassScreen_to_frag_log)
                 Toast.makeText(
                     activity,
                     "Swipe Right gesture detected",
                     Toast.LENGTH_SHORT
                 ).show()
             }
-            override fun onSwipeUp() {
-                super.onSwipeUp()
-                Toast.makeText(activity, "Swipe up gesture detected", Toast.LENGTH_SHORT)
-                    .show()
-            }
-            override fun onSwipeDown() {
-                super.onSwipeDown()
-                Toast.makeText(activity, "Swipe down gesture detected", Toast.LENGTH_SHORT)
-                    .show()
-            }
+//            override fun onSwipeUp() {
+//                super.onSwipeUp()
+//                Toast.makeText(activity, "Swipe up gesture detected", Toast.LENGTH_SHORT)
+//                    .show()
+//            }
+//            override fun onSwipeDown() {
+//                super.onSwipeDown()
+//                Toast.makeText(activity, "Swipe down gesture detected", Toast.LENGTH_SHORT)
+//                    .show()
+//            }
         })
         return root
     }

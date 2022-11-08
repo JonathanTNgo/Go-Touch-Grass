@@ -2,12 +2,17 @@ package com.john.gotouchgrass.ui.order
 
 import android.R
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import com.john.gotouchgrass.adapter.GrassLogAdapter
+import com.john.gotouchgrass.const.Layout
 import com.john.gotouchgrass.databinding.FragmentFragLogBinding
 import com.john.gotouchgrass.model.GrassViewModel
 
@@ -21,12 +26,26 @@ class Frag_log : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Shows Action Bar
-        val actionBar = (activity as AppCompatActivity?)!!.supportActionBar
-        actionBar?.setDisplayHomeAsUpEnabled(true)
-
         _binding = FragmentFragLogBinding.inflate(inflater, container, false)
         val root: View = binding.root
+        super.onCreate(savedInstanceState)
+        binding.grassRecyclerView.adapter = GrassLogAdapter(
+            activity?.applicationContext,
+            Layout.VERTICAL
+        )
+
+        // Specify fixed size to improve performance
+        binding.grassRecyclerView.setHasFixedSize(true)
+        root.setOnTouchListener(object : OnSwipeTouchListener(activity) {
+            override fun onSwipeLeft() {
+                super.onSwipeLeft()
+                Log.d( "Left", "WENT left")
+                findNavController().navigate(com.john.gotouchgrass.R.id.action_frag_log_to_grassScreen)
+                Toast.makeText(activity, "Swipe Left gesture detected",
+                    Toast.LENGTH_SHORT)
+                    .show()
+            }
+        })
         return root
     }
 
