@@ -1,6 +1,8 @@
 package com.john.gotouchgrass.model
 
 import android.graphics.Bitmap
+import android.os.SystemClock
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import java.lang.System.currentTimeMillis
 
@@ -12,17 +14,21 @@ class GrassViewModel: ViewModel() {
 
     // Starts timer
     fun startTime() {
-        timeStart = currentTimeMillis().toInt();
+        timeStart = SystemClock.uptimeMillis().toInt();
+        Log.d("Time 1", timeStart.toString())
     }
 
     // Stops timer and stores the time length in seconds (initially in milliseconds)
     fun stopTime() {
-        timeTotal = currentTimeMillis().toInt() - timeStart
+        timeTotal = SystemClock.uptimeMillis().toInt() - timeStart
+        Log.d("Time 2", timeTotal.toString())
         timeSeconds = (timeTotal / 1000 % 60)
+        Log.d("Time 3", timeSeconds.toString())
     }
 
     // Returns the double time, in minutes
     fun getTime(): Double {
+        Log.d("Time 4", timeSeconds.toString())
         return timeSeconds / 60.0
     }
 
