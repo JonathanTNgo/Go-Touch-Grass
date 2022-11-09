@@ -20,4 +20,8 @@
     <string name="grass_description">A grass icon. Click this to go outside!</string>
     <string name="home_description">This is the inside button. Click it to go inside!</string>
     <string name="picture_description">Picture taken by camera</string>
+    <string name="channel_name">grass_channel</string>
+    <string name="channel_description">grass_reminder</string>
+    <string name="grass_reminder">Remind me to go outside in...</string>
+    <string name="set_reminder">Set Reminder</string>
 </resources>

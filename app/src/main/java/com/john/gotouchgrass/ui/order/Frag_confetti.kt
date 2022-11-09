@@ -1,17 +1,17 @@
 package com.john.gotouchgrass.ui.order
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.john.gotouchgrass.R
 import com.john.gotouchgrass.databinding.FragmentFragConfettiBinding
-import com.john.gotouchgrass.model.GrassViewModel
+import com.john.gotouchgrass.viewmodel.GrassViewModel
+import com.john.gotouchgrass.viewmodel.GrassViewModelFactory
 import nl.dionsegijn.konfetti.core.Angle
 import nl.dionsegijn.konfetti.core.Party
 import nl.dionsegijn.konfetti.core.Position
@@ -46,7 +46,9 @@ class Frag_confetti : Fragment() {
     private var _binding: FragmentFragConfettiBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: GrassViewModel by activityViewModels()
+    private val viewModel: GrassViewModel by viewModels {
+        GrassViewModelFactory(requireActivity().application)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
