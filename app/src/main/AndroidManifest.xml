@@ -17,11 +17,11 @@
         <activity
             android:name=".ui.order.ConfettiScreen">
         </activity>
-        <activity android:name=".ui.order.LogScreen">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.order.LogScreen" />
-        </activity>
+<!--        <activity android:name=".ui.order.LogScreen">-->
+<!--            <meta-data-->
+<!--                android:name="android.support.PARENT_ACTIVITY"-->
+<!--                android:value=".ui.order.LogScreen" />-->
+<!--        </activity>-->
         <activity
             android:name=".MainActivity"
             android:exported="true">
