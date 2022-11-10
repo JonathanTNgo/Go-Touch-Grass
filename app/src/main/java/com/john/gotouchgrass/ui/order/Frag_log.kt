@@ -6,20 +6,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.john.gotouchgrass.adapter.GrassLogAdapter
 import com.john.gotouchgrass.const.Layout
 import com.john.gotouchgrass.databinding.FragmentFragLogBinding
-import com.john.gotouchgrass.model.GrassViewModel
+import com.john.gotouchgrass.viewmodel.GrassViewModel
 import com.john.gotouchgrass.R
 
 
 class Frag_log : Fragment() {
     private var _binding: FragmentFragLogBinding? = null
     private val binding get() = _binding!!
+//    private val viewModel: GrassViewModel by viewModels {
+//        GrassViewModelFactory(requireActivity().application)
+//    }
     private val viewModel: GrassViewModel by activityViewModels()
 
     override fun onCreateView(
