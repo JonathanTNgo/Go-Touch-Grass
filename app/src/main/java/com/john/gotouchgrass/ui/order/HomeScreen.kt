@@ -39,7 +39,7 @@ class HomeScreen : Fragment() {
     ): View? {
         _binding = FragmentHomeScreenBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        binding.houseButton.setOnClickListener {
+        binding.grassImage.setOnClickListener {
             viewModel.stopTime()
             findNavController().navigate(R.id.action_homeScreen_to_frag_rating)
         }
