@@ -6,36 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".ui.order.HomeScreen">
 
-
-    <!--This is the text that appears on the home screen.
-    It can either be about touching grass or going home.
-    It is initially about grass. -->
-
-    <!--This is the image on the home screen. It can either be a house
-    or grass image. -->
-
-    <TextView
-        android:id="@+id/Welcome_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="300dp"
-        android:text="@string/home_txt"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv"
-        app:layout_constraintVertical_bias="0.807" />
-
     <ImageView
-        android:id="@+id/grass_image"
+        android:id="@+id/house_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="25dp"
         android:adjustViewBounds="true"
         android:maxWidth="300dp"
         android:maxHeight="300dp"
@@ -45,32 +19,27 @@
         app:layout_constraintBottom_toTopOf="@id/camera_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Welcome_txt"
-        app:srcCompat="@drawable/starting_house" />
-
-    <!--This button will display past grass moments. -->
+        app:layout_constraintTop_toBottomOf="@id/iv"
+        app:srcCompat="@drawable/house_button_no_photo" />
 
     <ImageView
         android:id="@+id/camera_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@android:drawable/ic_menu_camera"
-        android:scaleX="5"
-        android:scaleY="4"
-        android:contentDescription="@string/home_description"
-        android:textSize="10sp"
+        android:layout_width="350dp"
+        android:layout_height="150dp"
+        android:contentDescription="This button is to take a photo of your moment"
+        android:src="@drawable/photo_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/grass_image"/>
+        app:layout_constraintTop_toBottomOf="@+id/house_button" />
 
     <ImageView
+        android:src="@drawable/picture_spot"
         android:id="@+id/iv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:contentDescription="@string/picture_description"
-        android:layout_marginTop="80dp"
-        app:layout_constraintBottom_toTopOf="@+id/Welcome_txt"
+        app:layout_constraintBottom_toTopOf="@id/house_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
