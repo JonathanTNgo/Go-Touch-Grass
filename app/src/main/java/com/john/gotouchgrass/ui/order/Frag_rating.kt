@@ -13,15 +13,15 @@ import com.john.gotouchgrass.data.DataSource
 import com.john.gotouchgrass.databinding.FragmentFragRatingBinding
 import com.john.gotouchgrass.model.GrassMoment
 import com.john.gotouchgrass.viewmodel.GrassViewModel
-import com.john.gotouchgrass.viewmodel.GrassViewModelFactory
 
 class Frag_rating : Fragment() {
     // Fragment variables
     private var _binding: FragmentFragRatingBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: GrassViewModel by viewModels {
-        GrassViewModelFactory(requireActivity().application)
-    }
+//    private val viewModel: GrassViewModel by viewModels {
+//        GrassViewModelFactory(requireActivity().application)
+//    }
+    private val viewModel: GrassViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

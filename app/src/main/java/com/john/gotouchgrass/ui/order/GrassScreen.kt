@@ -5,15 +5,11 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import android.widget.Toast
-import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.*
 import androidx.navigation.fragment.findNavController
 import com.john.gotouchgrass.R
 import com.john.gotouchgrass.databinding.FragmentGrassScreenBinding
 import com.john.gotouchgrass.viewmodel.GrassViewModel
-import com.john.gotouchgrass.viewmodel.GrassViewModelFactory
 import com.john.gotouchgrass.viewmodel.ReminderDialogFragment
 
 class GrassScreen : Fragment()  {
@@ -21,9 +17,10 @@ class GrassScreen : Fragment()  {
     private val binding get() = _binding!!
     private lateinit var listIntent: Intent
 
-    private val viewModel: GrassViewModel by viewModels {
-        GrassViewModelFactory(requireActivity().application)
-    }
+//    private val viewModel: GrassViewModel by viewModels {
+//        GrassViewModelFactory(requireActivity().application)
+//    }
+    private val viewModel: GrassViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -21,15 +21,15 @@ import androidx.navigation.fragment.findNavController
 import com.john.gotouchgrass.R
 import com.john.gotouchgrass.databinding.FragmentHomeScreenBinding
 import com.john.gotouchgrass.viewmodel.GrassViewModel
-import com.john.gotouchgrass.viewmodel.GrassViewModelFactory
 
 class HomeScreen : Fragment() {
     private var _binding: FragmentHomeScreenBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: GrassViewModel by viewModels {
-        GrassViewModelFactory(requireActivity().application)
-    }
+//    private val viewModel: GrassViewModel by viewModels {
+//        GrassViewModelFactory(requireActivity().application)
+//    }
+    private val viewModel: GrassViewModel by activityViewModels()
     val REQUEST_CODE = 200
     lateinit var logo: ImageView
 
