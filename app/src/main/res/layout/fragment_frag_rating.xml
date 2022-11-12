@@ -22,13 +22,14 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/activity_text"
                 android:layout_width="300dp"
-                android:layout_height="300dp"
+                android:layout_height="400dp"
                 android:hint="What did you do?"
                 android:outlineProvider="bounds"
-                app:layout_constraintBottom_toTopOf="@id/rate_text"
+                app:layout_constraintBottom_toTopOf="@id/submit"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="50dp"
                 app:boxBackgroundMode="outline">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -64,21 +65,6 @@
             <!--            app:layout_constraintStart_toStartOf="parent"-->
             <!--            app:layout_constraintTop_toTopOf="parent"></EditText>-->
 
-            <!--This text tells the user to rate their experience. -->
-            <TextView
-                android:id="@+id/rate_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/hint_rate"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/submit"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/activity_text" />
-
-
             <!--The user will click this to enter their information.-->
             <Button
                 android:id="@+id/submit"
@@ -87,18 +73,11 @@
                 android:scaleX="2"
                 android:scaleY="2"
                 android:text="@string/submit_button"
+                android:layout_marginTop="100dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rate_text" />
-
-    <!--            <ImageView-->
-    <!--                android:id="@+id/iv"-->
-    <!--                android:layout_width="match_parent"-->
-    <!--                android:layout_height="500dp"-->
-    <!--                app:layout_constraintEnd_toEndOf="parent"-->
-    <!--                app:layout_constraintStart_toStartOf="parent"-->
-    <!--                app:layout_constraintTop_toTopOf="parent" />-->
+                app:layout_constraintTop_toBottomOf="@+id/activity_text" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
