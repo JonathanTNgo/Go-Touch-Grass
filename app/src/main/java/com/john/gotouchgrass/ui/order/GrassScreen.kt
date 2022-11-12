@@ -6,16 +6,21 @@ import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.*
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.john.gotouchgrass.R
 import com.john.gotouchgrass.databinding.FragmentGrassScreenBinding
+import com.john.gotouchgrass.network.WeatherApi
 import com.john.gotouchgrass.viewmodel.GrassViewModel
 import com.john.gotouchgrass.viewmodel.ReminderDialogFragment
+import kotlinx.coroutines.*
+
 
 class GrassScreen : Fragment()  {
     private var _binding: FragmentGrassScreenBinding? = null
     private val binding get() = _binding!!
     private lateinit var listIntent: Intent
+    private val weatherViewModel: GrassScreenViewModel by activityViewModels()
 
 //    private val viewModel: GrassViewModel by viewModels {
 //        GrassViewModelFactory(requireActivity().application)
@@ -28,8 +33,13 @@ class GrassScreen : Fragment()  {
     ): View? {
         _binding = FragmentGrassScreenBinding.inflate(inflater, container, false)
         val root: View = binding.root
+        val weatherAPI = WeatherApi
+        val viewModelFactory = SearchViewModelFactory(weatherAPI)
+        val weatherViewModel = ViewModelProvider(this, viewModelFactory).get(GrassScreenViewModel::class.java)
 
         binding.grassImage.setOnClickListener {
+            weatherViewModel.getTemp(binding.citySearch.editText?.text.toString(), viewModel)
+            viewModel.setCity(binding.citySearch.editText.toString())
             viewModel.startTime()
             findNavController().navigate(R.id.action_grassScreen_to_homeScreen)
         }

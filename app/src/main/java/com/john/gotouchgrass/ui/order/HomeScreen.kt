@@ -17,14 +17,18 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.john.gotouchgrass.R
 import com.john.gotouchgrass.databinding.FragmentHomeScreenBinding
+import com.john.gotouchgrass.network.WeatherApi
 import com.john.gotouchgrass.viewmodel.GrassViewModel
 
 class HomeScreen : Fragment() {
     private var _binding: FragmentHomeScreenBinding? = null
     private val binding get() = _binding!!
+
 
 //    private val viewModel: GrassViewModel by viewModels {
 //        GrassViewModelFactory(requireActivity().application)
@@ -43,6 +47,17 @@ class HomeScreen : Fragment() {
             viewModel.stopTime()
             findNavController().navigate(R.id.action_homeScreen_to_frag_rating)
         }
+
+//        var city: String? = viewModel.getCity()
+//        if (city != null) {
+//            weatherViewModel.getTemp(city, viewModel)
+//        }
+
+
+        if (viewModel.getTemp() != null) {
+            binding.tempTxt?.text = viewModel.getTemp()
+        }
+
         super.onCreate(savedInstanceState)
         root.setOnTouchListener(object : OnSwipeTouchListener(activity) {
             override fun onSwipeLeft() {

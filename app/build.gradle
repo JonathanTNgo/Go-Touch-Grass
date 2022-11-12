@@ -3,6 +3,9 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
+def localProperties = new Properties()
+localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+
 android {
     compileSdk 32
 
@@ -12,7 +15,6 @@ android {
         targetSdk 32
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -20,6 +22,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            buildConfigField("String", "OPEN_WEATHER_API_KEY", "\"" + localProperties['OPEN_WEATHER_API_KEY'] + "\"")
         }
     }
     compileOptions {
@@ -52,4 +58,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'nl.dionsegijn:konfetti-xml:2.0.2'
     implementation "androidx.work:work-runtime-ktx:2.7.1"
+    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
+    implementation 'com.squareup.moshi:moshi-kotlin:1.13.0'
 }

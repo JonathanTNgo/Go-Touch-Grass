@@ -1,8 +1,16 @@
 package com.john.gotouchgrass
 
 
+import android.Manifest
+import android.content.Context
+import android.content.Context.LOCATION_SERVICE
+import android.content.pm.PackageManager
+import android.location.Location
+import android.location.LocationManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.john.gotouchgrass.R
@@ -17,6 +25,8 @@ class MainActivity : AppCompatActivity() {
     // Binding object corresponds to the activity_main.xml layout
     private lateinit var binding : ActivityMainBinding
     private lateinit var navController : NavController
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -4,6 +4,7 @@ import android.app.Application
 import android.graphics.Bitmap
 import android.os.SystemClock
 import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.work.ExistingWorkPolicy
@@ -20,6 +21,8 @@ class GrassViewModel(): ViewModel() {
     private var timeTotal = 0
     private var timeSeconds = 0
     private var bitmap: Bitmap? = null
+    private var temp: String? = null
+    private var city: String? = null
 
     private var workManager: WorkManager? = null;
 
@@ -40,6 +43,27 @@ class GrassViewModel(): ViewModel() {
         // TODO: Generate a OneTimeWorkRequest with the passed in duration, time unit, and data
         //  instance
         workManager?.enqueueUniqueWork("Touch Grass", ExistingWorkPolicy.REPLACE, oneTimeRequest)
+    }
+
+    fun setCity(curCity: String?) {
+        city = curCity
+    }
+
+    fun getCity(): String? {
+        return city
+    }
+
+    fun setTemp(curTemp: String?) {
+        if (curTemp == null) {
+            temp = null
+            Log.d("temp", "is null")
+        } else {
+            temp = curTemp.toString()
+        }
+    }
+
+    fun getTemp(): String? {
+        return temp
     }
 
     // Starts timer
