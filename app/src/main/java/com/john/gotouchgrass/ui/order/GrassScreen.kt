@@ -5,39 +5,22 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import android.widget.Toast
-<<<<<<< HEAD
-import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.*
 import androidx.navigation.fragment.findNavController
 import com.john.gotouchgrass.R
 import com.john.gotouchgrass.databinding.FragmentGrassScreenBinding
 import com.john.gotouchgrass.viewmodel.GrassViewModel
-import com.john.gotouchgrass.viewmodel.GrassViewModelFactory
 import com.john.gotouchgrass.viewmodel.ReminderDialogFragment
-=======
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
-import com.john.gotouchgrass.R
-import com.john.gotouchgrass.databinding.FragmentGrassScreenBinding
-import com.john.gotouchgrass.model.GrassViewModel
-import java.lang.Math.abs
->>>>>>> parent of 1ec72dc (Merge remote-tracking branch 'origin/master')
 
 class GrassScreen : Fragment()  {
     private var _binding: FragmentGrassScreenBinding? = null
     private val binding get() = _binding!!
     private lateinit var listIntent: Intent
 
-<<<<<<< HEAD
-    private val viewModel: GrassViewModel by viewModels {
-        GrassViewModelFactory(requireActivity().application)
-    }
-=======
+//    private val viewModel: GrassViewModel by viewModels {
+//        GrassViewModelFactory(requireActivity().application)
+//    }
     private val viewModel: GrassViewModel by activityViewModels()
->>>>>>> parent of 1ec72dc (Merge remote-tracking branch 'origin/master')
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,9 +28,15 @@ class GrassScreen : Fragment()  {
     ): View? {
         _binding = FragmentGrassScreenBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
         binding.grassImage.setOnClickListener {
             viewModel.startTime()
             findNavController().navigate(R.id.action_grassScreen_to_homeScreen)
+        }
+
+        binding.reminderButton.setOnClickListener {
+            val dialog = ReminderDialogFragment()
+            dialog.show(childFragmentManager, "DialogFragment")
         }
 
 //        binding.pastGrassButton .setOnClickListener {

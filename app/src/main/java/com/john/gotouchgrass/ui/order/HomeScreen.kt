@@ -16,27 +16,20 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.john.gotouchgrass.R
 import com.john.gotouchgrass.databinding.FragmentHomeScreenBinding
-<<<<<<< HEAD
 import com.john.gotouchgrass.viewmodel.GrassViewModel
-import com.john.gotouchgrass.viewmodel.GrassViewModelFactory
-=======
-import com.john.gotouchgrass.model.GrassViewModel
->>>>>>> parent of 1ec72dc (Merge remote-tracking branch 'origin/master')
 
 class HomeScreen : Fragment() {
     private var _binding: FragmentHomeScreenBinding? = null
     private val binding get() = _binding!!
 
-<<<<<<< HEAD
-    private val viewModel: GrassViewModel by viewModels {
-        GrassViewModelFactory(requireActivity().application)
-    }
-=======
+//    private val viewModel: GrassViewModel by viewModels {
+//        GrassViewModelFactory(requireActivity().application)
+//    }
     private val viewModel: GrassViewModel by activityViewModels()
->>>>>>> parent of 1ec72dc (Merge remote-tracking branch 'origin/master')
     val REQUEST_CODE = 200
     lateinit var logo: ImageView
 
@@ -46,7 +39,7 @@ class HomeScreen : Fragment() {
     ): View? {
         _binding = FragmentHomeScreenBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        binding.houseButton.setOnClickListener {
+        binding.grassImage.setOnClickListener {
             viewModel.stopTime()
             findNavController().navigate(R.id.action_homeScreen_to_frag_rating)
         }

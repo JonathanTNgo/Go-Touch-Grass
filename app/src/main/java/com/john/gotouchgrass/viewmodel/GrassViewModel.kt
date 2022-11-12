@@ -15,40 +15,50 @@ import java.lang.System.nanoTime
 import java.util.*
 import java.util.concurrent.TimeUnit
 
-class GrassViewModel(application: Application): ViewModel() {
+class GrassViewModel(): ViewModel() {
     private var timeStart = 0
     private var timeTotal = 0
     private var timeSeconds = 0
     private var bitmap: Bitmap? = null
 
-    private val workManager = WorkManager.getInstance(application)
+    private var workManager: WorkManager? = null;
 
 
     internal fun scheduleReminder(
         duration: Long,
         unit: TimeUnit,
+        application: Application
     ) {
+
+        if (workManager == null) {
+            workManager = WorkManager.getInstance(application)
+        }
+
         // TODO: create a Data instance with the plantName passed to it
         val oneTimeRequest = OneTimeWorkRequestBuilder<GrassWorker>().setInitialDelay(duration, unit).build()
 
         // TODO: Generate a OneTimeWorkRequest with the passed in duration, time unit, and data
         //  instance
-        workManager.enqueueUniqueWork("Touch Grass", ExistingWorkPolicy.REPLACE, oneTimeRequest)
+        workManager?.enqueueUniqueWork("Touch Grass", ExistingWorkPolicy.REPLACE, oneTimeRequest)
     }
 
     // Starts timer
     fun startTime() {
-        timeStart = currentTimeMillis().toInt();
+        timeStart = SystemClock.uptimeMillis().toInt();
+        Log.d("Time 1", timeStart.toString())
     }
 
     // Stops timer and stores the time length in seconds (initially in milliseconds)
     fun stopTime() {
-        timeTotal = currentTimeMillis().toInt()  - timeStart
+        timeTotal = SystemClock.uptimeMillis().toInt() - timeStart
+        Log.d("Time 2", timeTotal.toString())
         timeSeconds = (timeTotal / 1000 % 60)
+        Log.d("Time 3", timeSeconds.toString())
     }
 
     // Returns the double time, in minutes
     fun getTime(): Double {
+        Log.d("Time 4", timeSeconds.toString())
         return timeSeconds / 60.0
     }
 
@@ -86,12 +96,12 @@ class GrassViewModel(application: Application): ViewModel() {
     }
 }
 
-class GrassViewModelFactory(private val application: Application) : ViewModelProvider.Factory {
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return if (modelClass.isAssignableFrom(GrassViewModel::class.java)) {
-            GrassViewModel(application) as T
-        } else {
-            throw IllegalArgumentException("Unknown ViewModel class")
-        }
-    }
-}
+//class GrassViewModelFactory(private val application: Application) : ViewModelProvider.Factory {
+//    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+//        return if (modelClass.isAssignableFrom(GrassViewModel::class.java)) {
+//            GrassViewModel(application) as T
+//        } else {
+//            throw IllegalArgumentException("Unknown ViewModel class")
+//        }
+//    }
+//}

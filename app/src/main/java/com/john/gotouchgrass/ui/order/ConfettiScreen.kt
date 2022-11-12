@@ -5,17 +5,9 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.activityViewModels
 import com.john.gotouchgrass.MainActivity
 import com.john.gotouchgrass.R
-import com.john.gotouchgrass.model.GrassViewModel
-import nl.dionsegijn.konfetti.core.Angle
-import nl.dionsegijn.konfetti.core.Party
-import nl.dionsegijn.konfetti.core.Position
-import nl.dionsegijn.konfetti.core.Spread
-import nl.dionsegijn.konfetti.core.emitter.Emitter
 import nl.dionsegijn.konfetti.xml.KonfettiView
-import java.util.concurrent.TimeUnit
 
 // Class for creating the confetti animation
 // ** CREDIT TO https://github.com/DanielMartinus/Konfetti/ **
