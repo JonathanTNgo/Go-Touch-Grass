@@ -9,19 +9,15 @@ import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import java.util.concurrent.TimeUnit
 
 class ReminderDialogFragment() : DialogFragment() {
 
-//    private val viewModel: GrassViewModel by viewModels {
-//        GrassViewModelFactory(requireActivity().application)
-//    }
     private val viewModel: GrassViewModel by activityViewModels()
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         Log.d("entering", "log")
-        var application = requireActivity().application
+        val application = requireActivity().application
         return activity?.let {
             val builder = AlertDialog.Builder(it)
                 .setTitle(R.string.grass_reminder)

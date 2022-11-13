@@ -2,13 +2,9 @@ package com.john.gotouchgrass.ui.order
 
 import android.util.Log
 import androidx.lifecycle.*
-import com.john.gotouchgrass.BuildConfig
 import com.john.gotouchgrass.network.WeatherApi
 import com.john.gotouchgrass.viewmodel.GrassViewModel
-
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import kotlin.math.roundToInt
 
 /**
@@ -18,6 +14,7 @@ class GrassScreenViewModel(private val weatherAPI: WeatherApi) : ViewModel() {
 
     // The internal MutableLiveData that stores the status of the most recent request
     private val _status = MutableLiveData<String>()
+    private val key = "0a7563fcf28840e489d014cfa60b961b"
 
 
     // The external immutable LiveData for the request status
@@ -33,7 +30,8 @@ class GrassScreenViewModel(private val weatherAPI: WeatherApi) : ViewModel() {
     fun getTemp(city: String, viewModel: GrassViewModel) {
         viewModelScope.launch {
             try {
-                val response = weatherAPI.retrofitService.getTemp(city, "US", BuildConfig.OPEN_WEATHER_API_KEY)
+                //val response = weatherAPI.retrofitService.getTemp(city, "US", BuildConfig.OPEN_WEATHER_API_KEY)
+                val response = weatherAPI.retrofitService.getTemp(city, "US", key)
                 _status.value = "Success"
                 // Convert Celsius to Fahrenheit
                 var celsius: String? = null

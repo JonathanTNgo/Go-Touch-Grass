@@ -6,34 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.order.HomeScreen">
 
-<!--    <data>-->
-<!--      <variable>-->
-<!--          name="weatherViewModel"-->
-<!--          type="com.john.gotouchgrass.ui.order.WeatherViewModel"-->
-<!--      </variable>-->
-<!--    </data>-->
-
-<!--    <data>-->
-<!--        <variable-->
-<!--            name="WeatherViewModel"-->
-<!--            type="com.john.gotouchgrass.ui.order.WeatherViewModel />-->
-
-<!--        <variable-->
-<!--            name="CheckoutFragment"-->
-<!--            type="com.example.lunchtray.ui.order.CheckoutFragment" />-->
-<!--    </data>-->
-
-<!--    <data>-->
-<!--        <variable-->
-<!--            name="weatherViewModel"-->
-<!--            android:type="com.john.gotouchgrass.ui.order.WeatherViewModel" />-->
-
-<!--        &lt;!&ndash; TODO: Add the data binding variable for the AccompanimentMenuFragment &ndash;&gt;-->
-<!--        <variable-->
-<!--            name="AccompanimentMenuFragment"-->
-<!--            type ="com.example.lunchtray.ui.order.AccompanimentMenuFragment" />-->
-<!--    </data>-->
-
 
     <!--This is the text that appears on the home screen.
     It can either be about touching grass or going home.

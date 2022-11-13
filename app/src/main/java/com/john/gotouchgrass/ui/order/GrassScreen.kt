@@ -20,11 +20,6 @@ class GrassScreen : Fragment()  {
     private var _binding: FragmentGrassScreenBinding? = null
     private val binding get() = _binding!!
     private lateinit var listIntent: Intent
-    private val weatherViewModel: GrassScreenViewModel by activityViewModels()
-
-//    private val viewModel: GrassViewModel by viewModels {
-//        GrassViewModelFactory(requireActivity().application)
-//    }
     private val viewModel: GrassViewModel by activityViewModels()
 
     override fun onCreateView(
@@ -38,8 +33,13 @@ class GrassScreen : Fragment()  {
         val weatherViewModel = ViewModelProvider(this, viewModelFactory).get(GrassScreenViewModel::class.java)
 
         binding.grassImage.setOnClickListener {
-            weatherViewModel.getTemp(binding.citySearch.editText?.text.toString(), viewModel)
-            viewModel.setCity(binding.citySearch.editText.toString())
+            val city: String = binding.citySearch.editText?.text.toString()
+
+            // If a city has been entered, get the temp in that city.
+            if (city != null && city.isNotEmpty()) {
+                Log.d("city", city)
+                weatherViewModel.getTemp(binding.citySearch.editText?.text.toString(), viewModel)
+            }
             viewModel.startTime()
             findNavController().navigate(R.id.action_grassScreen_to_homeScreen)
         }

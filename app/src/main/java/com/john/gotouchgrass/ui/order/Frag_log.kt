@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
@@ -20,9 +21,6 @@ import com.john.gotouchgrass.R
 class Frag_log : Fragment() {
     private var _binding: FragmentFragLogBinding? = null
     private val binding get() = _binding!!
-//    private val viewModel: GrassViewModel by viewModels {
-//        GrassViewModelFactory(requireActivity().application)
-//    }
     private val viewModel: GrassViewModel by activityViewModels()
 
     override fun onCreateView(

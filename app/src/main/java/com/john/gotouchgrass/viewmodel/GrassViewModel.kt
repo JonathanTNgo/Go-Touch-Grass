@@ -36,12 +36,8 @@ class GrassViewModel(): ViewModel() {
         if (workManager == null) {
             workManager = WorkManager.getInstance(application)
         }
-
-        // TODO: create a Data instance with the plantName passed to it
         val oneTimeRequest = OneTimeWorkRequestBuilder<GrassWorker>().setInitialDelay(duration, unit).build()
 
-        // TODO: Generate a OneTimeWorkRequest with the passed in duration, time unit, and data
-        //  instance
         workManager?.enqueueUniqueWork("Touch Grass", ExistingWorkPolicy.REPLACE, oneTimeRequest)
     }
 
