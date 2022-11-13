@@ -54,9 +54,9 @@ class HomeScreen : Fragment() {
 //        }
 
 
-        if (viewModel.getTemp() != null) {
-            binding.tempTxt?.text = viewModel.getTemp()
-        }
+//        if (viewModel.getTemp() != null) {
+//            binding.tempTxt?.text = viewModel.getTemp()
+//        }
 
         super.onCreate(savedInstanceState)
         root.setOnTouchListener(object : OnSwipeTouchListener(activity) {

@@ -15,21 +15,24 @@
         android:textStyle="bold"
         android:layout_marginTop = "8dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/city_search"
         app:layout_constraintTop_toBottomOf="@id/city_search" />
 
     <!--Location box for weather-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/city_search"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent=".25"
+        app:layout_constraintWidth_percent=".3"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="Enter your city and then click SET CITY"
+        android:layout_marginTop="30dp"
+        android:hint="Enter your city"
         android:outlineProvider="bounds"
         app:boxBackgroundMode="outline"
         app:layout_constraintBottom_toTopOf="@+id/set_city_button"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/grass_image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -49,9 +52,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@id/reminder_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="@id/city_search"
+        app:layout_constraintStart_toStartOf="@id/city_search"
         app:layout_constraintTop_toBottomOf="@id/city_search"
         android:text="Set City" />
 
@@ -60,9 +63,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@id/grass_image"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/city_search"
+        app:layout_constraintEnd_toEndOf="@id/city_search"
         app:layout_constraintTop_toBottomOf="@id/set_city_button"
         android:text="@string/set_reminder" />
 
@@ -70,32 +73,31 @@
         android:id="@+id/grass_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintHeight_percent=".45"
-        app:layout_constraintWidth_percent=".8"
-        android:layout_marginBottom="25dp"
+        app:layout_constraintHeight_percent=".8"
+        app:layout_constraintWidth_percent=".5"
+        android:layout_marginTop="25dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@id/swipe_indicator"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reminder_button"
+        app:layout_constraintStart_toEndOf="@id/city_search"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/grass_button" />
 
     <ImageView
         android:id="@+id/swipe_indicator"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintHeight_percent=".1"
-        app:layout_constraintWidth_percent=".7"
-        android:layout_marginBottom="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/grass_image"
+        app:layout_constraintEnd_toEndOf="@id/set_city_button"
+        app:layout_constraintHeight_percent=".2"
+        app:layout_constraintStart_toStartOf="@id/set_city_button"
+        app:layout_constraintTop_toBottomOf="@id/reminder_button"
+        app:layout_constraintWidth_percent=".4"
         app:srcCompat="@drawable/swipe_indicator" />
 
     <!--This is the text that appears on the home screen.

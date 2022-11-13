@@ -3,9 +3,13 @@ package com.john.gotouchgrass.ui.order
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.*
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.john.gotouchgrass.R
@@ -13,7 +17,6 @@ import com.john.gotouchgrass.databinding.FragmentGrassScreenBinding
 import com.john.gotouchgrass.network.WeatherApi
 import com.john.gotouchgrass.viewmodel.GrassViewModel
 import com.john.gotouchgrass.viewmodel.ReminderDialogFragment
-import kotlinx.coroutines.*
 
 
 class GrassScreen : Fragment()  {
@@ -26,6 +29,7 @@ class GrassScreen : Fragment()  {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
         _binding = FragmentGrassScreenBinding.inflate(inflater, container, false)
         val root: View = binding.root
         val weatherAPI = WeatherApi
@@ -33,6 +37,11 @@ class GrassScreen : Fragment()  {
         val weatherViewModel = ViewModelProvider(this, viewModelFactory).get(GrassScreenViewModel::class.java)
 
         binding.grassImage.setOnClickListener {
+            viewModel.startTime()
+            findNavController().navigate(R.id.action_grassScreen_to_homeScreen)
+        }
+
+        binding.setCityButton.setOnClickListener {
             val city: String = binding.citySearch.editText?.text.toString()
 
             // If a city has been entered, get the temp in that city.
@@ -40,8 +49,6 @@ class GrassScreen : Fragment()  {
                 Log.d("city", city)
                 weatherViewModel.getTemp(binding.citySearch.editText?.text.toString(), viewModel)
             }
-            viewModel.startTime()
-            findNavController().navigate(R.id.action_grassScreen_to_homeScreen)
         }
 
         binding.reminderButton.setOnClickListener {
@@ -52,6 +59,11 @@ class GrassScreen : Fragment()  {
 //        binding.pastGrassButton .setOnClickListener {
 //            findNavController().navigate(R.id.action_grassScreen_to_logScreen)
 //        }
+
+        if (viewModel.getTemp() != null) {
+            binding.tempTxt?.text = viewModel.getTemp()
+        }
+
         super.onCreate(savedInstanceState)
         root.setOnTouchListener(object : OnSwipeTouchListener(activity) {
             override fun onSwipeRight() {
