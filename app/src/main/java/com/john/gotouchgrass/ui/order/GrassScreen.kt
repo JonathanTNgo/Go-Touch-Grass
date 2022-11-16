@@ -47,7 +47,10 @@ class GrassScreen : Fragment()  {
             // If a city has been entered, get the temp in that city.
             if (city != null && city.isNotEmpty()) {
                 Log.d("city", city)
-                weatherViewModel.getTemp(binding.citySearch.editText?.text.toString(), viewModel)
+//                weatherViewModel.getTemp(binding.citySearch.editText?.text.toString(), viewModel) {
+//                        (val ->
+//                }
+
             }
         }
 
@@ -70,11 +73,6 @@ class GrassScreen : Fragment()  {
                 super.onSwipeRight()
                 Log.d( "Right", "WENT right")
                 findNavController().navigate(R.id.action_grassScreen_to_frag_log)
-                Toast.makeText(
-                    activity,
-                    "Swipe Right gesture detected",
-                    Toast.LENGTH_SHORT
-                ).show()
             }
 //            override fun onSwipeLeft() {
 //                super.onSwipeLeft()

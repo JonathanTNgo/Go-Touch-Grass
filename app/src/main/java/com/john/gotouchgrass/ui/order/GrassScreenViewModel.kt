@@ -37,7 +37,7 @@ class GrassScreenViewModel(private val weatherAPI: WeatherApi) : ViewModel() {
                 var celsius: String? = null
                 Log.d("RESPONSE", response.toString())
                 if (response.data.isNotEmpty()) {
-                    celsius = (response.data[0].temp * (9.0 / 5) + 32).roundToInt().toString() + "°"
+                    celsius = (response.data[0].temp * (9.0 / 5) + 32).roundToInt().toString() + "°F"
                 }
                 _temp.value = celsius
                 if (celsius != null) {

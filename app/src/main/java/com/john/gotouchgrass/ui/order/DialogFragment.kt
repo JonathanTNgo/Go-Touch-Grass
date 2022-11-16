@@ -28,13 +28,16 @@ class ReminderDialogFragment() : DialogFragment() {
                                 .scheduleReminder(5, TimeUnit.SECONDS, application)
                         1 ->
                             viewModel
-                                .scheduleReminder(1, TimeUnit.DAYS, application)
+                                .scheduleReminder(2, TimeUnit.HOURS, application)
                         2 ->
                             viewModel
-                                .scheduleReminder(7, TimeUnit.DAYS, application)
+                                .scheduleReminder(3, TimeUnit.HOURS, application)
                         3 ->
                             viewModel
-                                .scheduleReminder(30, TimeUnit.DAYS, application)
+                                .scheduleReminder(5, TimeUnit.HOURS, application)
+                        4 ->
+                            viewModel
+                                .scheduleReminder(1, TimeUnit.DAYS, application)
                     }
                 }
             builder.create()

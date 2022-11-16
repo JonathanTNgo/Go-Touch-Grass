@@ -62,6 +62,10 @@ class GrassViewModel(): ViewModel() {
         return temp
     }
 
+    fun nullImage() {
+        bitmap = null
+    }
+
     // Starts timer
     fun startTime() {
         timeStart = SystemClock.uptimeMillis().toInt();
