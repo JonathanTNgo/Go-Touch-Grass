@@ -2,8 +2,10 @@ package com.john.gotouchgrass.ui.order
 
 import android.util.Log
 import androidx.lifecycle.*
+import com.john.gotouchgrass.databinding.FragmentGrassScreenBinding
 import com.john.gotouchgrass.network.WeatherApi
 import com.john.gotouchgrass.viewmodel.GrassViewModel
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 
@@ -27,7 +29,7 @@ class GrassScreenViewModel(private val weatherAPI: WeatherApi) : ViewModel() {
      * Gets Mars photos information from the Mars API Retrofit service and updates the
      * [MarsPhoto] [List] [LiveData].
      */
-    fun getTemp(city: String, viewModel: GrassViewModel) {
+    fun getTemp(city: String, viewModel: GrassViewModel, binding: FragmentGrassScreenBinding) {
         viewModelScope.launch {
             try {
                 //val response = weatherAPI.retrofitService.getTemp(city, "US", BuildConfig.OPEN_WEATHER_API_KEY)
@@ -43,7 +45,8 @@ class GrassScreenViewModel(private val weatherAPI: WeatherApi) : ViewModel() {
                 if (celsius != null) {
                     Log.d("TEMP", celsius)
                 }
-                viewModel.setTemp(_temp.value)
+                viewModel.setTemp(celsius)
+                binding.tempTxt?.text = celsius
                 Log.d("WEATHER", "success")
             } catch (e: Exception) {
                 Log.e("STACK TRACE:", e.stackTraceToString())

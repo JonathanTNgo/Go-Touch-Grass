@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import kotlinx.coroutines.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -44,12 +45,13 @@ class GrassScreen : Fragment()  {
         binding.setCityButton.setOnClickListener {
             val city: String = binding.citySearch.editText?.text.toString()
 
+            Toast.makeText(activity, "Getting weather data...", Toast.LENGTH_LONG).show()
+
             // If a city has been entered, get the temp in that city.
             if (city != null && city.isNotEmpty()) {
                 Log.d("city", city)
-//                weatherViewModel.getTemp(binding.citySearch.editText?.text.toString(), viewModel) {
-//                        (val ->
-//                }
+
+                weatherViewModel.getTemp(binding.citySearch.editText?.text.toString(), viewModel, binding)
 
             }
         }
@@ -62,10 +64,6 @@ class GrassScreen : Fragment()  {
 //        binding.pastGrassButton .setOnClickListener {
 //            findNavController().navigate(R.id.action_grassScreen_to_logScreen)
 //        }
-
-        if (viewModel.getTemp() != null) {
-            binding.tempTxt?.text = viewModel.getTemp()
-        }
 
         super.onCreate(savedInstanceState)
         root.setOnTouchListener(object : OnSwipeTouchListener(activity) {
