@@ -36,9 +36,12 @@ private val retrofit = Retrofit.Builder()
 
 interface WeatherAPIService {
     @GET("current")
-    suspend fun getTemp(@Query("city") city: String,
-                @Query("country") country: String,
-                @Query("key") key: String): WeatherForecast
+//    suspend fun getTemp(@Query("city") city: String,
+//                @Query("country") country: String,
+//                @Query("key") key: String): WeatherForecast
+    suspend fun getTemp(@Query("lat") latitude: Double,
+                        @Query("lon") longitude: Double,
+                        @Query("key") key: String): WeatherForecast
 }
 
 object WeatherApi {

@@ -23,6 +23,8 @@ class GrassViewModel(): ViewModel() {
     private var bitmap: Bitmap? = null
     private var temp: String? = null
     private var city: String? = null
+    private var latitude: Double? = null
+    private var longitude: Double? = null
 
     private var workManager: WorkManager? = null;
 
@@ -43,6 +45,20 @@ class GrassViewModel(): ViewModel() {
 
     fun setCity(curCity: String?) {
         city = curCity
+    }
+
+    fun setLocation(lat: Double, long: Double) {
+        latitude = lat
+        longitude = long
+        Log.i("Lat and Long?", "${latitude.toString()} ${longitude.toString()}")
+    }
+
+    fun getLat(): Double? {
+        return latitude
+    }
+
+    fun getLon(): Double? {
+        return longitude
     }
 
     fun getCity(): String? {

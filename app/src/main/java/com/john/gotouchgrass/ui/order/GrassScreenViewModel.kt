@@ -29,11 +29,12 @@ class GrassScreenViewModel(private val weatherAPI: WeatherApi) : ViewModel() {
      * Gets Mars photos information from the Mars API Retrofit service and updates the
      * [MarsPhoto] [List] [LiveData].
      */
-    fun getTemp(city: String, viewModel: GrassViewModel, binding: FragmentGrassScreenBinding) {
+    fun getTemp(lat: Double, lon: Double, viewModel: GrassViewModel, binding: FragmentGrassScreenBinding) {
         viewModelScope.launch {
             try {
                 //val response = weatherAPI.retrofitService.getTemp(city, "US", BuildConfig.OPEN_WEATHER_API_KEY)
-                val response = weatherAPI.retrofitService.getTemp(city, "US", key)
+                //val response = weatherAPI.retrofitService.getTemp(city, "US", key)
+                val response = weatherAPI.retrofitService.getTemp(lat, lon, key)
                 _status.value = "Success"
                 // Convert Celsius to Fahrenheit
                 var celsius: String? = null

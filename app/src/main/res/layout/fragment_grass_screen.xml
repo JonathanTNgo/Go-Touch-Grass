@@ -16,44 +16,7 @@
         android:layout_marginTop = "8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/city_search" />
-
-    <!--Location box for weather-->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/city_search"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Enter your city and then click SET CITY"
-        android:outlineProvider="bounds"
-        app:boxBackgroundMode="outline"
-        app:layout_constraintBottom_toTopOf="@+id/set_city_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/city_search_edit"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:imeOptions="actionDone"
-            android:inputType="textMultiLine"
-            android:maxLength="400" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
-        android:id="@+id/set_city_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@id/reminder_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/city_search"
-        android:text="Set City" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/reminder_button"
@@ -63,7 +26,7 @@
         app:layout_constraintBottom_toTopOf="@id/grass_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/set_city_button"
+        app:layout_constraintTop_toTopOf="parent"
         android:text="@string/set_reminder" />
 
     <ImageView
