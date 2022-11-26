@@ -54,9 +54,28 @@ class GrassScreen : Fragment()  {
         val viewModelFactory = SearchViewModelFactory(weatherAPI)
         weatherViewModel = ViewModelProvider(this, viewModelFactory).get(GrassScreenViewModel::class.java)
 
+        // Set for the grass button. Should switch to home fragment when clicked
         binding.grassImage.setOnClickListener {
             viewModel.startTime()
             findNavController().navigate(R.id.action_grassScreen_to_homeScreen)
+        }
+
+        // Notification button allows the user to set up a push notification reminder
+        binding.reminderButton.setOnClickListener {
+            val dialog = ReminderDialogFragment()
+            dialog.show(childFragmentManager, "DialogFragment")
+        }
+
+        // Book button opens the log fragment
+        binding.logButton.setOnClickListener {
+            Toast.makeText(activity, "Button Clicked", Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.action_grassScreen_to_frag_log)
+        }
+
+        // Help button opens the help fragment
+        binding.helpButton.setOnClickListener {
+            Toast.makeText(activity, "Button Clicked", Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.action_grassScreen_to_frag_help)
         }
 
         fusedLocationProviderContent = activity?.let {
@@ -84,42 +103,12 @@ class GrassScreen : Fragment()  {
 
         getCurrentLocation()
 
-        binding.reminderButton.setOnClickListener {
-            val dialog = ReminderDialogFragment()
-            dialog.show(childFragmentManager, "DialogFragment")
-        }
-
         if (viewModel.getTemp() != null) {
             binding.tempTxt.text = viewModel.getTemp().toString();
         }
 
 
         super.onCreate(savedInstanceState)
-        root.setOnTouchListener(object : OnSwipeTouchListener(activity) {
-            override fun onSwipeRight() {
-                super.onSwipeRight()
-                Log.d( "Right", "WENT right")
-                findNavController().navigate(R.id.action_grassScreen_to_frag_log)
-            }
-//            override fun onSwipeLeft() {
-//                super.onSwipeLeft()
-//                Log.d( "Left", "WENT left")
-//                findNavController().navigate(R.id.action_grassScreen_to_frag_log)
-//                Toast.makeText(activity, "Swipe Left gesture detected",
-//                    Toast.LENGTH_SHORT)
-//                    .show()
-//            }
-//            override fun onSwipeUp() {
-//                super.onSwipeUp()
-//                Toast.makeText(activity, "Swipe up gesture detected", Toast.LENGTH_SHORT)
-//                    .show()
-//            }
-//            override fun onSwipeDown() {
-//                super.onSwipeDown()
-//                Toast.makeText(activity, "Swipe down gesture detected", Toast.LENGTH_SHORT)
-//                    .show()
-//            }
-        })
         return root
     }
 
@@ -164,7 +153,6 @@ class GrassScreen : Fragment()  {
                 Toast.makeText(activity, "Turn on Location for Weather Services", Toast.LENGTH_SHORT).show()
             }
         } else {
-            Log.d("hello", "entering8")
             requestPermission()
         }
     }

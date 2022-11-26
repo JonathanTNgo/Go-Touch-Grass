@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.order.HomeScreen">
+
+    <ImageView
+        android:id="@+id/house_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent=".2"
+        app:layout_constraintWidth_percent=".3"
+        android:scaleType="fitCenter"
+        android:visibility="visible"
+        android:contentDescription="This house is a button used to mark the end of your time outside"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/house_help"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/grass_image"
+        app:srcCompat="@drawable/house_button_no_photo" />
+
+    <TextView
+        android:id="@+id/house_help"
+        android:layout_width="218dp"
+        android:layout_height="154dp"
+        app:layout_constraintBottom_toTopOf="@id/grass_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/house_image"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:text="@string/help_house" />
+
+    <ImageView
+        android:id="@+id/grass_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent=".2"
+        app:layout_constraintWidth_percent=".3"
+        android:scaleType="fitCenter"
+        android:visibility="visible"
+        android:contentDescription="This grass is a button used to mark the start of going outside"
+        app:layout_constraintEnd_toStartOf="@id/grass_help"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/notification_image"
+        app:layout_constraintTop_toBottomOf="@id/house_image"
+        app:srcCompat="@drawable/grass_button" />
+
+    <TextView
+        android:id="@+id/grass_help"
+        android:layout_width="218dp"
+        android:layout_height="154dp"
+        app:layout_constraintTop_toBottomOf="@id/house_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/grass_image"
+        app:layout_constraintBottom_toTopOf="@id/notification_image"
+        android:gravity="center"
+        android:text="@string/help_grass" />
+
+
+    <ImageView
+        android:id="@+id/notification_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent=".1"
+        app:layout_constraintWidth_percent=".2"
+        android:scaleType="fitCenter"
+        android:visibility="visible"
+        android:contentDescription="This bell icon is used to set reminders for yourself to go outside"
+        app:layout_constraintTop_toBottomOf="@id/grass_image"
+        app:layout_constraintEnd_toStartOf="@id/notification_help"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/log_image"
+        app:srcCompat="@drawable/notification_button" />
+
+    <TextView
+        android:id="@+id/notification_help"
+        android:layout_width="218dp"
+        android:layout_height="154dp"
+        app:layout_constraintTop_toBottomOf="@id/grass_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/house_image"
+        app:layout_constraintBottom_toTopOf="@id/log_image"
+        android:gravity="center"
+        android:text="@string/help_reminder" />
+
+    <ImageView
+        android:id="@+id/log_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent=".15"
+        app:layout_constraintWidth_percent=".25"
+        android:scaleType="fitCenter"
+        android:visibility="visible"
+        android:contentDescription="This book icon is used to view your log of moments outside"
+        app:layout_constraintTop_toBottomOf="@id/notification_image"
+        app:layout_constraintEnd_toStartOf="@id/notification_help"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/log_button" />
+
+    <TextView
+        android:id="@+id/log_help"
+        android:layout_width="218dp"
+        android:layout_height="154dp"
+        app:layout_constraintTop_toBottomOf="@id/notification_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/house_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center"
+        android:text="@string/help_log" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
