@@ -2,13 +2,11 @@ package com.john.gotouchgrass.ui.order
 
 import android.Manifest
 import android.content.Context
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationManager
 import android.os.Bundle
 import android.os.Looper
-import android.telecom.TelecomManager.EXTRA_LOCATION
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -19,16 +17,13 @@ import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
-import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.navigation.fragment.findNavController
-import com.google.android.gms.common.api.GoogleApiClient
 import com.google.android.gms.location.*
 import com.john.gotouchgrass.R
 import com.john.gotouchgrass.databinding.FragmentGrassScreenBinding
 import com.john.gotouchgrass.network.WeatherApi
 import com.john.gotouchgrass.viewmodel.GrassViewModel
 import com.john.gotouchgrass.viewmodel.ReminderDialogFragment
-import java.util.*
 import java.util.concurrent.TimeUnit
 
 

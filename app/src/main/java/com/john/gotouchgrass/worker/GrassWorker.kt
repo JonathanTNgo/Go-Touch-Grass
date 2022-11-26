@@ -5,6 +5,7 @@ import com.john.gotouchgrass.MainActivity
 import com.john.gotouchgrass.R
 
 import android.app.PendingIntent
+import android.app.PendingIntent.FLAG_IMMUTABLE
 import android.content.Context
 import android.content.Intent
 import androidx.core.app.NotificationCompat
@@ -26,7 +27,7 @@ class GrassWorker(
         }
 
         val pendingIntent: PendingIntent = PendingIntent
-            .getActivity(applicationContext, 0, intent, 0)
+            .getActivity(applicationContext, 0, intent, FLAG_IMMUTABLE)
 
         val builder = NotificationCompat.Builder(applicationContext, BaseApplication.CHANNEL_ID)
             .setSmallIcon(R.drawable.starting_grass)

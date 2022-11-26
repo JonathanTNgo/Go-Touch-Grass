@@ -55,6 +55,6 @@ class GrassLogAdapter(
         // The outside description is set.
         holder.describeOutside?.text = item.description
         // The image is set.
-        holder.imageOutside?.setImageBitmap(item.activityImage)
+        holder.imageOutside?.setImageURI(item.activityImage)
     }
 }

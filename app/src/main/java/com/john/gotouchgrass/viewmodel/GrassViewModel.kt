@@ -2,6 +2,7 @@ package com.john.gotouchgrass.viewmodel
 
 import android.app.Application
 import android.graphics.Bitmap
+import android.net.Uri
 import android.os.SystemClock
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -20,7 +21,7 @@ class GrassViewModel(): ViewModel() {
     private var timeStart = 0
     private var timeTotal = 0
     private var timeSeconds = 0
-    private var bitmap: Bitmap? = null
+    private var image: Uri? = null
     private var temp: String? = null
     private var city: String? = null
     private var latitude: Double? = null
@@ -79,7 +80,7 @@ class GrassViewModel(): ViewModel() {
     }
 
     fun nullImage() {
-        bitmap = null
+        image = null
     }
 
     // Starts timer
@@ -127,12 +128,12 @@ class GrassViewModel(): ViewModel() {
         timeTotal = 0
     }
 
-    fun storeImage(image: Bitmap) {
-        bitmap = image;
+    fun storeImage(pic: Uri) {
+        image = pic
     }
 
-    fun getImage(): Bitmap? {
-        return bitmap
+    fun getImage(): Uri? {
+        return image
     }
 }
 
