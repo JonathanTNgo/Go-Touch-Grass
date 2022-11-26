@@ -98,7 +98,7 @@ class GrassViewModel(): ViewModel() {
         Log.d("Time 3", timeSeconds.toString())
     }
 
-    // Returns the double time, in minutes
+    // Returns the double time, in seconds
     fun getTime(): Double {
         Log.d("Time 4", timeSeconds.toString())
         return timeSeconds * 1.0
