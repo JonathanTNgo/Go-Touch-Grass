@@ -25,6 +25,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/outside_description"
             tools:text="2 hours" />
 
         <!--This displays the desciption a user provided about their time outside. -->
@@ -37,7 +38,7 @@
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/activity_image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/outside_time"
@@ -57,8 +58,5 @@
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             tools:srcCompat="@tools:sample/avatars" />
-
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

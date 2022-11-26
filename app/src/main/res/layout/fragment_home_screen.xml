@@ -8,36 +8,38 @@
 
     <ImageView
         android:id="@+id/house_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintHeight_percent=".4"
-        app:layout_constraintWidth_percent=".6"
+        android:layout_width="262dp"
+        android:layout_height="308dp"
+        android:contentDescription="@string/house_txt"
         android:scaleType="fitCenter"
         android:visibility="visible"
-        android:contentDescription="@string/house_txt"
         app:layout_constraintBottom_toTopOf="@id/camera_button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv"
+        app:layout_constraintWidth_percent=".6"
         app:srcCompat="@drawable/house_button_no_photo" />
 
     <ImageView
         android:id="@+id/camera_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintHeight_percent=".2"
-        app:layout_constraintWidth_percent=".7"
-        android:src="@drawable/photo_button"
+        android:layout_width="292dp"
+        android:layout_height="107dp"
+        android:layout_marginBottom="8dp"
         android:contentDescription="@string/camera_txt"
+        android:src="@drawable/photo_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/house_button"
+        app:layout_constraintHeight_percent=".2"
         app:layout_constraintStart_toStartOf="@id/house_button"
-        app:layout_constraintTop_toBottomOf="@+id/house_button" />
+        app:layout_constraintTop_toBottomOf="@+id/house_button"
+        app:layout_constraintWidth_percent=".7" />
 
     <ImageView
         android:id="@+id/iv"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintWidth_percent=".7"
         app:layout_constraintHeight_percent=".4"
         android:contentDescription="@string/picture_description"
