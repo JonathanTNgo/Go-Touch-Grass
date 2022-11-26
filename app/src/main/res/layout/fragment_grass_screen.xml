@@ -11,23 +11,43 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:contentDescription="@string/temperature_text"
         android:textSize="35sp"
         android:textStyle="bold"
-        android:layout_marginTop = "8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop = "20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toStartOf="@id/reminder_button"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageView
         android:id="@+id/reminder_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent=".06"
+        app:layout_constraintWidth_percent=".1"
+        android:contentDescription="@string/reminder_txt"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@id/grass_image"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="@string/set_reminder" />
+        app:layout_constraintStart_toEndOf="@+id/grass_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/notification_button" />
+
+    <ImageView
+        android:id="@+id/help_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent=".06"
+        app:layout_constraintWidth_percent=".1"
+        android:contentDescription="@string/help_txt"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="40dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toBottomOf="@id/reminder_button"
+        app:layout_constraintStart_toEndOf="@id/grass_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/help_button" />
 
     <ImageView
         android:id="@+id/grass_image"
@@ -35,31 +55,30 @@
         android:layout_height="0dp"
         app:layout_constraintHeight_percent=".45"
         app:layout_constraintWidth_percent=".8"
+        android:contentDescription="@string/grass_button_txt"
         android:layout_marginBottom="25dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@id/swipe_indicator"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reminder_button"
-        app:srcCompat="@drawable/grass_button" />
-
-    <ImageView
-        android:id="@+id/swipe_indicator"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintHeight_percent=".1"
-        app:layout_constraintWidth_percent=".7"
-        android:layout_marginBottom="10dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/grass_image"
-        app:srcCompat="@drawable/swipe_indicator" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/grass_button" />
+
+    <ImageView
+        android:id="@+id/log_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent=".18"
+        app:layout_constraintWidth_percent=".3"
+        android:contentDescription="@string/log_txt"
+        android:layout_marginBottom="20dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/log_button" />
 
     <!--This is the text that appears on the home screen.
     It can either be about touching grass or going home.

@@ -25,4 +25,20 @@
     <string name="grass_reminder">Remind me to go outside in...</string>
     <string name="set_reminder">Set Reminder</string>
     <string name="what_city_are_you_in">What city are you in?</string>
+    <string name="temperature_text">Temperature text</string>
+    <string name="reminder_txt">Button to set up reminders</string>
+    <string name="help_txt">Button to bring up help screen</string>
+    <string name="grass_button_txt">Button to start timer outside</string>
+    <string name="log_txt">Button to bring up past moments outside</string>
+    <string name="help_log">Everytime you go outside and come back in, your moment outside is recorded and stored into the logs. To view your moments, press the book button.</string>
+    <string name="help_reminder">This bell icon is used to set reminders for yourself to go outside</string>
+    <string name="help_grass">This grass is a button used to mark the start of going outside</string>
+    <string name="help_house">This house is a button used to mark the end of your time outside</string>
+    <string name="house_txt">Button to mark the end of time outside</string>
+    <string name="camera_txt">This is the button to take a photo of your moment outside</string>
+    <string name="outside_txt">Text box to enter what you did outside</string>
+    <string name="submit_txt">Button to submit your text</string>
+    <string name="time_txt">Text displaying time spent outside</string>
+    <string name="start_over_txt">Button to go back to the starting grass button</string>
+    <string name="confetti">Animation of confetti congratulating the user</string>
 </resources>
