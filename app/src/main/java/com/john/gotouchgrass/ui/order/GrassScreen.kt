@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationManager
+import android.os.Build
 import android.os.Bundle
 import android.os.Looper
 import android.util.Log
@@ -24,6 +25,9 @@ import com.john.gotouchgrass.databinding.FragmentGrassScreenBinding
 import com.john.gotouchgrass.network.WeatherApi
 import com.john.gotouchgrass.viewmodel.GrassViewModel
 import com.john.gotouchgrass.viewmodel.ReminderDialogFragment
+import java.time.Instant
+import java.util.*
+import java.util.Date.from
 import java.util.concurrent.TimeUnit
 
 
@@ -102,7 +106,7 @@ class GrassScreen : Fragment()  {
             binding.tempTxt.text = viewModel.getTemp().toString();
         }
 
-
+        viewModel.setDate(Calendar.getInstance())
         super.onCreate(savedInstanceState)
         return root
     }

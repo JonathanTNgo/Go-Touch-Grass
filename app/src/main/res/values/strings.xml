@@ -2,9 +2,10 @@
     <string name="app_name">GoTouchGrass</string>
     <string name="home_txt">GO</string>
     <string name="grass_txt">GO TOUCH</string>
-    <string name="time_spent">TIME SPENT: %.2f minutes</string>
+    <string name="time_spent">TIME SPENT: %s</string>
     <string name="rating">RATING: %s</string>
     <string name="minute_string">You spent %.2f minutes outside!</string>
+    <string name="date_string">%d/%d/%d</string>
     <string name="home_button">Home</string>
     <string name="past_moments">Past Grass Moments</string>
     <string name="no_moments">You currently have no past Touch Grass moments.</string>

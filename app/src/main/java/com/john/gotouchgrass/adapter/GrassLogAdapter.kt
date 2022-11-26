@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.john.gotouchgrass.R
 import com.john.gotouchgrass.data.DataSource
 import com.john.gotouchgrass.model.GrassMoment
+import java.util.*
+import kotlin.math.roundToInt
 
 class GrassLogAdapter(
     private val context: Context?,
@@ -25,6 +27,7 @@ class GrassLogAdapter(
         val timeOutside: TextView? = view?.findViewById(R.id.outside_time)
         val describeOutside: TextView? = view?.findViewById(R.id.outside_description)
         val imageOutside: ImageView? = view?.findViewById(R.id.activity_image)
+        val dateOutside: TextView? = view?.findViewById(R.id.date_outside)
     }
 
     /**
@@ -51,10 +54,32 @@ class GrassLogAdapter(
         val item = grassList[position]
         val res = context?.resources
         // The time outside is set.
-        holder.timeOutside?.text = res?.getString(R.string.time_spent, item.timeSpentOutside)
+        holder.timeOutside?.text = res?.getString(R.string.time_spent, getTimeSpent(item.timeSpentOutside))
         // The outside description is set.
         holder.describeOutside?.text = item.description
         // The image is set.
         holder.imageOutside?.setImageURI(item.activityImage)
+        // The date outside is set. The month returned is zero-indexed, so 1 is added to it.
+        holder.dateOutside?.text = res?.getString(R.string.date_string, item.date?.get(Calendar.MONTH)?.plus(1), item.date?.get(Calendar.DATE), item.date?.get(Calendar.YEAR))
+    }
+
+    private fun getTimeSpent(timeSeconds: Double): String {
+        if (timeSeconds <= 59.0) {
+            val sec = String.format("%.0f", timeSeconds)
+            return "$sec seconds"
+        } else if (timeSeconds == 60.0) {
+            return "${timeSeconds as Int / 60} minute"
+        } else if (timeSeconds > 60.0 && timeSeconds <= 3599.0) {
+            val min = String.format("%f", timeSeconds / 60)
+            val sec = String.format("%.2f", timeSeconds % 60)
+            return "$min minutes and $sec second(s)"
+        } else if (timeSeconds == 3600.00) {
+            val hr = String.format("%.2f", timeSeconds / 60 / 60)
+            return "$hr hour"
+        }
+
+        val hr = String.format("%.2f", timeSeconds / 60 / 60)
+        val min = String.format("%.2f", timeSeconds / 60 % 60)
+        return "$hr hours and $min minute(s)"
     }
 }

@@ -144,12 +144,6 @@ class HomeScreen : Fragment() {
         }
     }
 
-    fun capturePhoto() {
-        Log.d("hello", "taking photo")
-        val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        startActivityForResult(cameraIntent, REQUEST_CODE)
-    }
-
     private fun takePicture(){
         val pictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         photoFile = createImageFile()

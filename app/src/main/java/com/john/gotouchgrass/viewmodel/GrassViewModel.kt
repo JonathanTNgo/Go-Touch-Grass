@@ -14,6 +14,7 @@ import androidx.work.WorkManager
 import com.john.gotouchgrass.worker.GrassWorker
 import java.lang.System.currentTimeMillis
 import java.lang.System.nanoTime
+import java.time.Instant
 import java.util.*
 import java.util.concurrent.TimeUnit
 
@@ -23,9 +24,9 @@ class GrassViewModel(): ViewModel() {
     private var timeSeconds = 0
     private var image: Uri? = null
     private var temp: String? = null
-    private var city: String? = null
     private var latitude: Double? = null
     private var longitude: Double? = null
+    private var date: Calendar? = null
 
     private var workManager: WorkManager? = null;
 
@@ -44,8 +45,12 @@ class GrassViewModel(): ViewModel() {
         workManager?.enqueueUniqueWork("Touch Grass", ExistingWorkPolicy.REPLACE, oneTimeRequest)
     }
 
-    fun setCity(curCity: String?) {
-        city = curCity
+    fun setDate(d: Calendar?) {
+        date = d
+    }
+
+    fun getDate(): Calendar? {
+        return date
     }
 
     fun setLocation(lat: Double, long: Double) {
@@ -60,10 +65,6 @@ class GrassViewModel(): ViewModel() {
 
     fun getLon(): Double? {
         return longitude
-    }
-
-    fun getCity(): String? {
-        return city
     }
 
     fun setTemp(curTemp: String?) {
@@ -100,7 +101,7 @@ class GrassViewModel(): ViewModel() {
     // Returns the double time, in minutes
     fun getTime(): Double {
         Log.d("Time 4", timeSeconds.toString())
-        return timeSeconds / 60.0
+        return timeSeconds * 1.0
     }
 
     // Returns a string representing the time.
@@ -108,18 +109,17 @@ class GrassViewModel(): ViewModel() {
     // If time > 60 seconds, string will say minutes + seconds
     // If time > 60 minutes, string will say hours + minutes
     fun getTimeString(): String {
-        when (timeSeconds)
-        {
+        return when (timeSeconds) {
             // Print in seconds
-            in 0..59 -> return "You spent " + timeSeconds + " seconds outside!"
+            in 0..59 -> "You spent $timeSeconds seconds outside!"
             // Print only for 1 minute
-            60 -> return "You spent " + (timeSeconds / 60) + " minute outside!"
+            60 -> "You spent " + (timeSeconds / 60) + " minute outside!"
             // Print in minutes and seconds
-            in 61..3599 -> return "You spent " + (timeSeconds / 60) + " minutes and " + (timeSeconds % 60) + " second(s) outside!"
+            in 61..3599 -> "You spent " + (timeSeconds / 60) + " minutes and " + (timeSeconds % 60) + " second(s) outside!"
             // Print only for 1 hour
-            3600 -> return "You spent " + (timeSeconds / 60 / 60) + " hour outside!"
+            3600 -> "You spent " + (timeSeconds / 60 / 60) + " hour outside!"
             // Print in hours and minutes
-            else -> return "You spent " + (timeSeconds / 60 / 60) + " hours and " + (timeSeconds / 60 % 60) + " minute(s) outside!"
+            else -> "You spent " + (timeSeconds / 60 / 60) + " hours and " + (timeSeconds / 60 % 60) + " minute(s) outside!"
         }
     }
 
