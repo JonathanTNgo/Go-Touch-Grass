@@ -67,13 +67,11 @@ class GrassScreen : Fragment()  {
 
         // Book button opens the log fragment
         binding.logButton.setOnClickListener {
-            Toast.makeText(activity, "Button Clicked", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_grassScreen_to_frag_log)
         }
 
         // Help button opens the help fragment
         binding.helpButton.setOnClickListener {
-            Toast.makeText(activity, "Button Clicked", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_grassScreen_to_frag_help)
         }
 
